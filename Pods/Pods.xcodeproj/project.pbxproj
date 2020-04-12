@@ -1,0 +1,984 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0385186A9F5E58219588BAB1464DE929 /* ColorWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891D7F8E2AD475E413780FF08B7EBF04 /* ColorWheel.swift */; };
+		04E09193213C67BDCAE045413E612031 /* SelectedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA8785A7BAE62E1B922049DA6EC92B /* SelectedColorView.swift */; };
+		1041FBD6FAB574FEC3B093D79EABA3D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		13312F7819BD7169B75D5259318D2F83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		2DECCFD00479EAEAEA069E67099460E9 /* SwiftHSVColorPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6721C433083F30996086A7583A4CE12 /* SwiftHSVColorPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34018830E4A928B47660FDDF9DF8423C /* SwiftHSVColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C3D889038D7A1FF47DF6B939A9CAC /* SwiftHSVColorPicker-dummy.m */; };
+		364124C712029FC75D06E70D251F2595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3A08A144789D73A1827B79906BEB8CED /* Pods-ArtNet LightTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD86EF8601470ACFF485245BA19CBB2 /* Pods-ArtNet LightTests-dummy.m */; };
+		814E788BC701B813E5A1777C41A95842 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9033FF29F4745592C216796AB65BC59 /* ColorUtils.swift */; };
+		877D6FEFC343F81AB27C9987E73D81AC /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3324232EC69AD124AE035964D9B795 /* BrightnessView.swift */; };
+		8A63D9E19B565486665DDF6256B57045 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		8C6EB3B2D28E66479A93005489BED681 /* Pods-ArtNet LightTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 282FA894FBD2BA6EBA15CCA37F50C6B6 /* Pods-ArtNet LightTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B96C20DF568513DA692E83AE55C5D894 /* SwiftHSVColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDA3FBE55F976808056868FA221134 /* SwiftHSVColorPicker.swift */; };
+		C969BAC8AF33CA2A0362C7A61B61D6E5 /* Pods-ArtNet Light-ArtNet LightUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AD135FA10FA7405680615C382FEC9C /* Pods-ArtNet Light-ArtNet LightUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EECB3D714A8B11CB457868D70B00C5AD /* Pods-ArtNet Light-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B6F8D89080A41EB23D1BD377F9342C /* Pods-ArtNet Light-dummy.m */; };
+		F5AECF3C71F546EDDFA0191D3EA72AC0 /* Pods-ArtNet Light-ArtNet LightUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B841A2AD146ABC17CBAFF89F99F8ACB /* Pods-ArtNet Light-ArtNet LightUITests-dummy.m */; };
+		FC166705FA578E1D8FA27843CFB92B1C /* Pods-ArtNet Light-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51AEF2C1670C83B9CCDBC7B14F24ED16 /* Pods-ArtNet Light-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		078E874DA709A0655466076B653EBAB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 331F67CA1C4A96D015734ACF27651ACC;
+			remoteInfo = SwiftHSVColorPicker;
+		};
+		6FE6ACB6D58B0F697050B708DB753477 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 331F67CA1C4A96D015734ACF27651ACC;
+			remoteInfo = SwiftHSVColorPicker;
+		};
+		F8D941E615237AB7C665C15FA11E5471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36F2E93CB6B4C43DBA8ED35C68C48646;
+			remoteInfo = "Pods-ArtNet Light";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0087D8BE4D846613C1D65429B91C617E /* Pods-ArtNet Light-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ArtNet Light-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0BFF1256AFF5D464DF13706CA491C38C /* Pods-ArtNet Light-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ArtNet Light-frameworks.sh"; sourceTree = "<group>"; };
+		0C4B5C33B9EE04D83566C02C5A8E3828 /* Pods-ArtNet LightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArtNet LightTests.release.xcconfig"; sourceTree = "<group>"; };
+		2368BD898FDACB447562E539D7318452 /* Pods-ArtNet Light-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArtNet Light-acknowledgements.plist"; sourceTree = "<group>"; };
+		24123346C86C0D4DB0B548147DA008B6 /* Pods-ArtNet Light-ArtNet LightUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArtNet Light-ArtNet LightUITests-Info.plist"; sourceTree = "<group>"; };
+		2565381D5A83B2231ED02A8EA01DF9D3 /* Pods-ArtNet Light-ArtNet LightUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ArtNet Light-ArtNet LightUITests-frameworks.sh"; sourceTree = "<group>"; };
+		282FA894FBD2BA6EBA15CCA37F50C6B6 /* Pods-ArtNet LightTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ArtNet LightTests-umbrella.h"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		33B6F8D89080A41EB23D1BD377F9342C /* Pods-ArtNet Light-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ArtNet Light-dummy.m"; sourceTree = "<group>"; };
+		37078A28900AECBDCFDF32463BFBB85A /* SwiftHSVColorPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftHSVColorPicker.modulemap; sourceTree = "<group>"; };
+		3F055C954E9933AC1A755E038B4AA928 /* Pods-ArtNet LightTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ArtNet LightTests.modulemap"; sourceTree = "<group>"; };
+		40BEC1A2E4EAA426CE5BE4642243849C /* Pods_ArtNet_LightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ArtNet_LightTests.framework; path = "Pods-ArtNet LightTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A943CE8CC26F49C4C7FEFF4D582A595 /* Pods-ArtNet Light-ArtNet LightUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ArtNet Light-ArtNet LightUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4BCB1167CB7168C71E0BC5E47D8D2446 /* Pods_ArtNet_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ArtNet_Light.framework; path = "Pods-ArtNet Light.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51AEF2C1670C83B9CCDBC7B14F24ED16 /* Pods-ArtNet Light-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ArtNet Light-umbrella.h"; sourceTree = "<group>"; };
+		52CDF95878651C740B6047306E3BD612 /* Pods-ArtNet Light-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArtNet Light-Info.plist"; sourceTree = "<group>"; };
+		5D348562D15AAEB6E6E4EA485A66843A /* SwiftHSVColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftHSVColorPicker.framework; path = SwiftHSVColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7197D25E2D35FA2EB295055A9191DED6 /* SwiftHSVColorPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftHSVColorPicker-Info.plist"; sourceTree = "<group>"; };
+		733D11DC84E98A40DD7067FB7242F13C /* Pods-ArtNet LightTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArtNet LightTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		76AA8785A7BAE62E1B922049DA6EC92B /* SelectedColorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectedColorView.swift; path = Source/SelectedColorView.swift; sourceTree = "<group>"; };
+		792FC2CE33BF0DDDA2457451A596565D /* SwiftHSVColorPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHSVColorPicker.release.xcconfig; sourceTree = "<group>"; };
+		7C2310F450AA84835B124B3063DD7B69 /* Pods-ArtNet LightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArtNet LightTests.debug.xcconfig"; sourceTree = "<group>"; };
+		891D7F8E2AD475E413780FF08B7EBF04 /* ColorWheel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorWheel.swift; path = Source/ColorWheel.swift; sourceTree = "<group>"; };
+		89FA30FED8387DAF8D823FC633301674 /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ArtNet_Light_ArtNet_LightUITests.framework; path = "Pods-ArtNet Light-ArtNet LightUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C310C43033B4CD3D247C6C4E94DF0D7 /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B841A2AD146ABC17CBAFF89F99F8ACB /* Pods-ArtNet Light-ArtNet LightUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ArtNet Light-ArtNet LightUITests-dummy.m"; sourceTree = "<group>"; };
+		9CD86EF8601470ACFF485245BA19CBB2 /* Pods-ArtNet LightTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ArtNet LightTests-dummy.m"; sourceTree = "<group>"; };
+		9D0C3D889038D7A1FF47DF6B939A9CAC /* SwiftHSVColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHSVColorPicker-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DB5655E6D87DA91C7E9CA5835636D02 /* Pods-ArtNet Light.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArtNet Light.debug.xcconfig"; sourceTree = "<group>"; };
+		A53BAB46C0A6982A18DBF45396C5C1BF /* SwiftHSVColorPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHSVColorPicker.debug.xcconfig; sourceTree = "<group>"; };
+		AC815850E667E59AA21E37B19B5C2C6A /* Pods-ArtNet LightTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArtNet LightTests-Info.plist"; sourceTree = "<group>"; };
+		B2FDA3FBE55F976808056868FA221134 /* SwiftHSVColorPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftHSVColorPicker.swift; path = Source/SwiftHSVColorPicker.swift; sourceTree = "<group>"; };
+		B6721C433083F30996086A7583A4CE12 /* SwiftHSVColorPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHSVColorPicker-umbrella.h"; sourceTree = "<group>"; };
+		B996502670436C08C34B8185ECF93F4E /* Pods-ArtNet Light.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ArtNet Light.modulemap"; sourceTree = "<group>"; };
+		BB3324232EC69AD124AE035964D9B795 /* BrightnessView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrightnessView.swift; path = Source/BrightnessView.swift; sourceTree = "<group>"; };
+		C3AF11FD081ECE680DBDFEA1E080BF43 /* Pods-ArtNet LightTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ArtNet LightTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C9033FF29F4745592C216796AB65BC59 /* ColorUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = Source/ColorUtils.swift; sourceTree = "<group>"; };
+		D5AD135FA10FA7405680615C382FEC9C /* Pods-ArtNet Light-ArtNet LightUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ArtNet Light-ArtNet LightUITests-umbrella.h"; sourceTree = "<group>"; };
+		DC76E4A87985000CED0B4799C10D7C14 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EF5C34531382D5FF8A202D4C59D3F82A /* SwiftHSVColorPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHSVColorPicker-prefix.pch"; sourceTree = "<group>"; };
+		EF675BB256E65CCB560ED7C5A5A3F346 /* Pods-ArtNet Light.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ArtNet Light.release.xcconfig"; sourceTree = "<group>"; };
+		F0354FB5C67AE8B04AD07DE49062CB4F /* Pods-ArtNet Light-ArtNet LightUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ArtNet Light-ArtNet LightUITests.modulemap"; sourceTree = "<group>"; };
+		FD2A7626C7EC5B5D4ADD95EDF3E40583 /* Pods-ArtNet Light-ArtNet LightUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ArtNet Light-ArtNet LightUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		570FCD8CB761074E5E25AB0F9BCBEA12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1041FBD6FAB574FEC3B093D79EABA3D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58A276B14125C3A5FB817D7A5428368E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				364124C712029FC75D06E70D251F2595 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DF6F96CF7DBBD18B39F04FA7380926D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13312F7819BD7169B75D5259318D2F83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE19130F3FCBDA26C13D65F3810E7755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A63D9E19B565486665DDF6256B57045 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04993B6DE6D8C835CE41B874B4F0B2A7 /* SwiftHSVColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				BB3324232EC69AD124AE035964D9B795 /* BrightnessView.swift */,
+				C9033FF29F4745592C216796AB65BC59 /* ColorUtils.swift */,
+				891D7F8E2AD475E413780FF08B7EBF04 /* ColorWheel.swift */,
+				76AA8785A7BAE62E1B922049DA6EC92B /* SelectedColorView.swift */,
+				B2FDA3FBE55F976808056868FA221134 /* SwiftHSVColorPicker.swift */,
+				22561AE4C4CFF9D6BBD844E55AEBB6A5 /* Support Files */,
+			);
+			name = SwiftHSVColorPicker;
+			path = SwiftHSVColorPicker;
+			sourceTree = "<group>";
+		};
+		1970896B0F952300125CC2DB6E5F6B6A /* Pods-ArtNet Light */ = {
+			isa = PBXGroup;
+			children = (
+				B996502670436C08C34B8185ECF93F4E /* Pods-ArtNet Light.modulemap */,
+				0087D8BE4D846613C1D65429B91C617E /* Pods-ArtNet Light-acknowledgements.markdown */,
+				2368BD898FDACB447562E539D7318452 /* Pods-ArtNet Light-acknowledgements.plist */,
+				33B6F8D89080A41EB23D1BD377F9342C /* Pods-ArtNet Light-dummy.m */,
+				0BFF1256AFF5D464DF13706CA491C38C /* Pods-ArtNet Light-frameworks.sh */,
+				52CDF95878651C740B6047306E3BD612 /* Pods-ArtNet Light-Info.plist */,
+				51AEF2C1670C83B9CCDBC7B14F24ED16 /* Pods-ArtNet Light-umbrella.h */,
+				9DB5655E6D87DA91C7E9CA5835636D02 /* Pods-ArtNet Light.debug.xcconfig */,
+				EF675BB256E65CCB560ED7C5A5A3F346 /* Pods-ArtNet Light.release.xcconfig */,
+			);
+			name = "Pods-ArtNet Light";
+			path = "Target Support Files/Pods-ArtNet Light";
+			sourceTree = "<group>";
+		};
+		22561AE4C4CFF9D6BBD844E55AEBB6A5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				37078A28900AECBDCFDF32463BFBB85A /* SwiftHSVColorPicker.modulemap */,
+				9D0C3D889038D7A1FF47DF6B939A9CAC /* SwiftHSVColorPicker-dummy.m */,
+				7197D25E2D35FA2EB295055A9191DED6 /* SwiftHSVColorPicker-Info.plist */,
+				EF5C34531382D5FF8A202D4C59D3F82A /* SwiftHSVColorPicker-prefix.pch */,
+				B6721C433083F30996086A7583A4CE12 /* SwiftHSVColorPicker-umbrella.h */,
+				A53BAB46C0A6982A18DBF45396C5C1BF /* SwiftHSVColorPicker.debug.xcconfig */,
+				792FC2CE33BF0DDDA2457451A596565D /* SwiftHSVColorPicker.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftHSVColorPicker";
+			sourceTree = "<group>";
+		};
+		7E93B90E5E5AB661246BDF76B495FFE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04993B6DE6D8C835CE41B874B4F0B2A7 /* SwiftHSVColorPicker */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		84612C2602C24201B085F59E142BBD2A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1970896B0F952300125CC2DB6E5F6B6A /* Pods-ArtNet Light */,
+				E98307F497CFE0E1A353BA2C87E6F984 /* Pods-ArtNet Light-ArtNet LightUITests */,
+				95187DC57733D239AF73BB84E22CF9AC /* Pods-ArtNet LightTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		95187DC57733D239AF73BB84E22CF9AC /* Pods-ArtNet LightTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F055C954E9933AC1A755E038B4AA928 /* Pods-ArtNet LightTests.modulemap */,
+				C3AF11FD081ECE680DBDFEA1E080BF43 /* Pods-ArtNet LightTests-acknowledgements.markdown */,
+				733D11DC84E98A40DD7067FB7242F13C /* Pods-ArtNet LightTests-acknowledgements.plist */,
+				9CD86EF8601470ACFF485245BA19CBB2 /* Pods-ArtNet LightTests-dummy.m */,
+				AC815850E667E59AA21E37B19B5C2C6A /* Pods-ArtNet LightTests-Info.plist */,
+				282FA894FBD2BA6EBA15CCA37F50C6B6 /* Pods-ArtNet LightTests-umbrella.h */,
+				7C2310F450AA84835B124B3063DD7B69 /* Pods-ArtNet LightTests.debug.xcconfig */,
+				0C4B5C33B9EE04D83566C02C5A8E3828 /* Pods-ArtNet LightTests.release.xcconfig */,
+			);
+			name = "Pods-ArtNet LightTests";
+			path = "Target Support Files/Pods-ArtNet LightTests";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				7E93B90E5E5AB661246BDF76B495FFE5 /* Pods */,
+				F8B62485C41DCEA54577EF8AF03EA87D /* Products */,
+				84612C2602C24201B085F59E142BBD2A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E98307F497CFE0E1A353BA2C87E6F984 /* Pods-ArtNet Light-ArtNet LightUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F0354FB5C67AE8B04AD07DE49062CB4F /* Pods-ArtNet Light-ArtNet LightUITests.modulemap */,
+				4A943CE8CC26F49C4C7FEFF4D582A595 /* Pods-ArtNet Light-ArtNet LightUITests-acknowledgements.markdown */,
+				FD2A7626C7EC5B5D4ADD95EDF3E40583 /* Pods-ArtNet Light-ArtNet LightUITests-acknowledgements.plist */,
+				9B841A2AD146ABC17CBAFF89F99F8ACB /* Pods-ArtNet Light-ArtNet LightUITests-dummy.m */,
+				2565381D5A83B2231ED02A8EA01DF9D3 /* Pods-ArtNet Light-ArtNet LightUITests-frameworks.sh */,
+				24123346C86C0D4DB0B548147DA008B6 /* Pods-ArtNet Light-ArtNet LightUITests-Info.plist */,
+				D5AD135FA10FA7405680615C382FEC9C /* Pods-ArtNet Light-ArtNet LightUITests-umbrella.h */,
+				8C310C43033B4CD3D247C6C4E94DF0D7 /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */,
+				DC76E4A87985000CED0B4799C10D7C14 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */,
+			);
+			name = "Pods-ArtNet Light-ArtNet LightUITests";
+			path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests";
+			sourceTree = "<group>";
+		};
+		F8B62485C41DCEA54577EF8AF03EA87D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BCB1167CB7168C71E0BC5E47D8D2446 /* Pods_ArtNet_Light.framework */,
+				89FA30FED8387DAF8D823FC633301674 /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */,
+				40BEC1A2E4EAA426CE5BE4642243849C /* Pods_ArtNet_LightTests.framework */,
+				5D348562D15AAEB6E6E4EA485A66843A /* SwiftHSVColorPicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		124CBD51760539FE64B137DFF941FA33 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C6EB3B2D28E66479A93005489BED681 /* Pods-ArtNet LightTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADBF4A32B0DFF85BB8450EA7F38F0702 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DECCFD00479EAEAEA069E67099460E9 /* SwiftHSVColorPicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9D1432DDDBD1D841F3F0A4A365A2612 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C969BAC8AF33CA2A0362C7A61B61D6E5 /* Pods-ArtNet Light-ArtNet LightUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4D75EF7EC63223E6093AFF93C989CDE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC166705FA578E1D8FA27843CFB92B1C /* Pods-ArtNet Light-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		331F67CA1C4A96D015734ACF27651ACC /* SwiftHSVColorPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCE558DE71DE84CF3981336FB61D41D6 /* Build configuration list for PBXNativeTarget "SwiftHSVColorPicker" */;
+			buildPhases = (
+				ADBF4A32B0DFF85BB8450EA7F38F0702 /* Headers */,
+				701C7B4201A0F4026A9F6222CF7F6EC0 /* Sources */,
+				EE19130F3FCBDA26C13D65F3810E7755 /* Frameworks */,
+				872FE78631D6476F435EB2DD237FE03A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftHSVColorPicker;
+			productName = SwiftHSVColorPicker;
+			productReference = 5D348562D15AAEB6E6E4EA485A66843A /* SwiftHSVColorPicker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		36F2E93CB6B4C43DBA8ED35C68C48646 /* Pods-ArtNet Light */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D375965EE7A132D517E94790065043D6 /* Build configuration list for PBXNativeTarget "Pods-ArtNet Light" */;
+			buildPhases = (
+				E4D75EF7EC63223E6093AFF93C989CDE /* Headers */,
+				CCEB698EAF1B7360C399FED2681F80C5 /* Sources */,
+				58A276B14125C3A5FB817D7A5428368E /* Frameworks */,
+				0A0B5A8685ADBE72335211F83DC47E33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				318B544804AB957AF4330494E406225D /* PBXTargetDependency */,
+			);
+			name = "Pods-ArtNet Light";
+			productName = "Pods-ArtNet Light";
+			productReference = 4BCB1167CB7168C71E0BC5E47D8D2446 /* Pods_ArtNet_Light.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		62BEA3FE843A8F517F7B32B36FAC5343 /* Pods-ArtNet Light-ArtNet LightUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 084210683763D84A04A4E797F3709B61 /* Build configuration list for PBXNativeTarget "Pods-ArtNet Light-ArtNet LightUITests" */;
+			buildPhases = (
+				D9D1432DDDBD1D841F3F0A4A365A2612 /* Headers */,
+				FB8586C4EBE034F6D41EC63C5DABF185 /* Sources */,
+				570FCD8CB761074E5E25AB0F9BCBEA12 /* Frameworks */,
+				546AF496D911F982600B794077B7E378 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96B1C07D9ED22993C4972524B47E4B0A /* PBXTargetDependency */,
+			);
+			name = "Pods-ArtNet Light-ArtNet LightUITests";
+			productName = "Pods-ArtNet Light-ArtNet LightUITests";
+			productReference = 89FA30FED8387DAF8D823FC633301674 /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		749D232C95FE4A78CFB917A666930F02 /* Pods-ArtNet LightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 822A2645D96E24A9A8676E70D619293C /* Build configuration list for PBXNativeTarget "Pods-ArtNet LightTests" */;
+			buildPhases = (
+				124CBD51760539FE64B137DFF941FA33 /* Headers */,
+				FCE8CE6F177FF9F2F81599246C651BC7 /* Sources */,
+				8DF6F96CF7DBBD18B39F04FA7380926D /* Frameworks */,
+				2529EA5A09C82EE33BF3540CC3CC5F92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8793FA267753209491AEE018B2A26890 /* PBXTargetDependency */,
+			);
+			name = "Pods-ArtNet LightTests";
+			productName = "Pods-ArtNet LightTests";
+			productReference = 40BEC1A2E4EAA426CE5BE4642243849C /* Pods_ArtNet_LightTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = F8B62485C41DCEA54577EF8AF03EA87D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36F2E93CB6B4C43DBA8ED35C68C48646 /* Pods-ArtNet Light */,
+				62BEA3FE843A8F517F7B32B36FAC5343 /* Pods-ArtNet Light-ArtNet LightUITests */,
+				749D232C95FE4A78CFB917A666930F02 /* Pods-ArtNet LightTests */,
+				331F67CA1C4A96D015734ACF27651ACC /* SwiftHSVColorPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A0B5A8685ADBE72335211F83DC47E33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2529EA5A09C82EE33BF3540CC3CC5F92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		546AF496D911F982600B794077B7E378 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		872FE78631D6476F435EB2DD237FE03A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		701C7B4201A0F4026A9F6222CF7F6EC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877D6FEFC343F81AB27C9987E73D81AC /* BrightnessView.swift in Sources */,
+				814E788BC701B813E5A1777C41A95842 /* ColorUtils.swift in Sources */,
+				0385186A9F5E58219588BAB1464DE929 /* ColorWheel.swift in Sources */,
+				04E09193213C67BDCAE045413E612031 /* SelectedColorView.swift in Sources */,
+				34018830E4A928B47660FDDF9DF8423C /* SwiftHSVColorPicker-dummy.m in Sources */,
+				B96C20DF568513DA692E83AE55C5D894 /* SwiftHSVColorPicker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCEB698EAF1B7360C399FED2681F80C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EECB3D714A8B11CB457868D70B00C5AD /* Pods-ArtNet Light-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8586C4EBE034F6D41EC63C5DABF185 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5AECF3C71F546EDDFA0191D3EA72AC0 /* Pods-ArtNet Light-ArtNet LightUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCE8CE6F177FF9F2F81599246C651BC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A08A144789D73A1827B79906BEB8CED /* Pods-ArtNet LightTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		318B544804AB957AF4330494E406225D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftHSVColorPicker;
+			target = 331F67CA1C4A96D015734ACF27651ACC /* SwiftHSVColorPicker */;
+			targetProxy = 078E874DA709A0655466076B653EBAB2 /* PBXContainerItemProxy */;
+		};
+		8793FA267753209491AEE018B2A26890 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-ArtNet Light";
+			target = 36F2E93CB6B4C43DBA8ED35C68C48646 /* Pods-ArtNet Light */;
+			targetProxy = F8D941E615237AB7C665C15FA11E5471 /* PBXContainerItemProxy */;
+		};
+		96B1C07D9ED22993C4972524B47E4B0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftHSVColorPicker;
+			target = 331F67CA1C4A96D015734ACF27651ACC /* SwiftHSVColorPicker */;
+			targetProxy = 6FE6ACB6D58B0F697050B708DB753477 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D2D5B59E16DF2127ACAA16B6826414A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC76E4A87985000CED0B4799C10D7C14 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2608878FCC3F4D4F12763E4AAC2216E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB5655E6D87DA91C7E9CA5835636D02 /* Pods-ArtNet Light.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2E10B6757DF98D0884642CA3CB23237D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792FC2CE33BF0DDDA2457451A596565D /* SwiftHSVColorPicker.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftHSVColorPicker/SwiftHSVColorPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftHSVColorPicker/SwiftHSVColorPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftHSVColorPicker/SwiftHSVColorPicker.modulemap";
+				PRODUCT_MODULE_NAME = SwiftHSVColorPicker;
+				PRODUCT_NAME = SwiftHSVColorPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		769CC16B9437E0F8C09F2DB16C60474F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C4B5C33B9EE04D83566C02C5A8E3828 /* Pods-ArtNet LightTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ArtNet LightTests/Pods-ArtNet LightTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ArtNet LightTests/Pods-ArtNet LightTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A87C209BD13EC72DF45FF2376D8157F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C2310F450AA84835B124B3063DD7B69 /* Pods-ArtNet LightTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ArtNet LightTests/Pods-ArtNet LightTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ArtNet LightTests/Pods-ArtNet LightTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D9989E40422651BD98D553786E4FF95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C310C43033B4CD3D247C6C4E94DF0D7 /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1DCA651AB14492DBC14D3B9C0EFA0EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF675BB256E65CCB560ED7C5A5A3F346 /* Pods-ArtNet Light.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EFD47846DA56E30F8CA234AD85C0C646 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A53BAB46C0A6982A18DBF45396C5C1BF /* SwiftHSVColorPicker.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftHSVColorPicker/SwiftHSVColorPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftHSVColorPicker/SwiftHSVColorPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftHSVColorPicker/SwiftHSVColorPicker.modulemap";
+				PRODUCT_MODULE_NAME = SwiftHSVColorPicker;
+				PRODUCT_NAME = SwiftHSVColorPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		084210683763D84A04A4E797F3709B61 /* Build configuration list for PBXNativeTarget "Pods-ArtNet Light-ArtNet LightUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9989E40422651BD98D553786E4FF95E /* Debug */,
+				1D2D5B59E16DF2127ACAA16B6826414A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C61D818ACD3C2C116FED6A9C67E91B4 /* Debug */,
+				7DC5F11AFBEAE473E8D3C24A2D11338D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		822A2645D96E24A9A8676E70D619293C /* Build configuration list for PBXNativeTarget "Pods-ArtNet LightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A87C209BD13EC72DF45FF2376D8157F1 /* Debug */,
+				769CC16B9437E0F8C09F2DB16C60474F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCE558DE71DE84CF3981336FB61D41D6 /* Build configuration list for PBXNativeTarget "SwiftHSVColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFD47846DA56E30F8CA234AD85C0C646 /* Debug */,
+				2E10B6757DF98D0884642CA3CB23237D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D375965EE7A132D517E94790065043D6 /* Build configuration list for PBXNativeTarget "Pods-ArtNet Light" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2608878FCC3F4D4F12763E4AAC2216E9 /* Debug */,
+				E1DCA651AB14492DBC14D3B9C0EFA0EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

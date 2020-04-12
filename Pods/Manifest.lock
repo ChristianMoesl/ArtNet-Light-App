@@ -1,0 +1,16 @@
+PODS:
+  - SwiftHSVColorPicker (1.1.1)
+
+DEPENDENCIES:
+  - SwiftHSVColorPicker
+
+SPEC REPOS:
+  trunk:
+    - SwiftHSVColorPicker
+
+SPEC CHECKSUMS:
+  SwiftHSVColorPicker: 69c9028dea168e0f8ee2439d31a899cf1df95678
+
+PODFILE CHECKSUM: c6bebd520c855378530de70ef0a5b5271b38f928
+
+COCOAPODS: 1.9.1

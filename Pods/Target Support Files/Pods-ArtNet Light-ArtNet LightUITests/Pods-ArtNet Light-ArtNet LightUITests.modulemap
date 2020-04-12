@@ -1,0 +1,6 @@
+framework module Pods_ArtNet_Light_ArtNet_LightUITests {
+  umbrella header "Pods-ArtNet Light-ArtNet LightUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

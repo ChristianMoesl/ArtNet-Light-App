@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48D14D9D7728280D69BA7B9B /* Pods_ArtNet_Light.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197174C75281B11992ED58D4 /* Pods_ArtNet_Light.framework */; };
+		54C69589DFE241FFADCE9877 /* Pods_ArtNet_Light_ArtNet_LightUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA67D7D74A81F8F94D294F3D /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */; };
+		831A278F24438CB60063DA15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A278E24438CB60063DA15 /* AppDelegate.swift */; };
+		831A279124438CB60063DA15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A279024438CB60063DA15 /* SceneDelegate.swift */; };
+		831A279324438CB60063DA15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A279224438CB60063DA15 /* ContentView.swift */; };
+		831A279524438CB70063DA15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831A279424438CB70063DA15 /* Assets.xcassets */; };
+		831A279824438CB70063DA15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831A279724438CB70063DA15 /* Preview Assets.xcassets */; };
+		831A279B24438CB70063DA15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A279924438CB70063DA15 /* LaunchScreen.storyboard */; };
+		831A27A624438CB70063DA15 /* ArtNet_LightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A27A524438CB70063DA15 /* ArtNet_LightTests.swift */; };
+		831A27B124438CB70063DA15 /* ArtNet_LightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A27B024438CB70063DA15 /* ArtNet_LightUITests.swift */; };
+		D6FC6BAC9503B72A08012DF2 /* Pods_ArtNet_LightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDDBD8DDAAE104FCDC50937 /* Pods_ArtNet_LightTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		831A27A224438CB70063DA15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 831A278324438CB60063DA15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 831A278A24438CB60063DA15;
+			remoteInfo = "ArtNet Light";
+		};
+		831A27AD24438CB70063DA15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 831A278324438CB60063DA15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 831A278A24438CB60063DA15;
+			remoteInfo = "ArtNet Light";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03046DD71DD673D825A5616B /* Pods-ArtNet Light.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light.release.xcconfig"; path = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light.release.xcconfig"; sourceTree = "<group>"; };
+		15EF6618F8BF5A3EFFEEACD1 /* Pods-ArtNet LightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet LightTests.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet LightTests/Pods-ArtNet LightTests.debug.xcconfig"; sourceTree = "<group>"; };
+		197174C75281B11992ED58D4 /* Pods_ArtNet_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_Light.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1E663E2004C659D1CACB6B /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		24CD2522759BC68D2D6AC14E /* Pods-ArtNet Light.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light.debug.xcconfig"; sourceTree = "<group>"; };
+		831A278B24438CB60063DA15 /* ArtNet Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArtNet Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		831A278E24438CB60063DA15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		831A279024438CB60063DA15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		831A279224438CB60063DA15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		831A279424438CB70063DA15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		831A279724438CB70063DA15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		831A279A24438CB70063DA15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		831A279C24438CB70063DA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831A27A124438CB70063DA15 /* ArtNet LightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ArtNet LightTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		831A27A524438CB70063DA15 /* ArtNet_LightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtNet_LightTests.swift; sourceTree = "<group>"; };
+		831A27A724438CB70063DA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		831A27AC24438CB70063DA15 /* ArtNet LightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ArtNet LightUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		831A27B024438CB70063DA15 /* ArtNet_LightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtNet_LightUITests.swift; sourceTree = "<group>"; };
+		831A27B224438CB70063DA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6E810D08A24B2B139F3A519 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DA67D7D74A81F8F94D294F3D /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_Light_ArtNet_LightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDDBD8DDAAE104FCDC50937 /* Pods_ArtNet_LightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_LightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5FC85A5E6852120042D4E7 /* Pods-ArtNet LightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet LightTests.release.xcconfig"; path = "Target Support Files/Pods-ArtNet LightTests/Pods-ArtNet LightTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		831A278824438CB60063DA15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48D14D9D7728280D69BA7B9B /* Pods_ArtNet_Light.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831A279E24438CB70063DA15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6FC6BAC9503B72A08012DF2 /* Pods_ArtNet_LightTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831A27A924438CB70063DA15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54C69589DFE241FFADCE9877 /* Pods_ArtNet_Light_ArtNet_LightUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FCAC39D9D68A30D5E517023 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24CD2522759BC68D2D6AC14E /* Pods-ArtNet Light.debug.xcconfig */,
+				03046DD71DD673D825A5616B /* Pods-ArtNet Light.release.xcconfig */,
+				1D1E663E2004C659D1CACB6B /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */,
+				C6E810D08A24B2B139F3A519 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */,
+				15EF6618F8BF5A3EFFEEACD1 /* Pods-ArtNet LightTests.debug.xcconfig */,
+				FC5FC85A5E6852120042D4E7 /* Pods-ArtNet LightTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		831A278224438CB60063DA15 = {
+			isa = PBXGroup;
+			children = (
+				831A278D24438CB60063DA15 /* ArtNet Light */,
+				831A27A424438CB70063DA15 /* ArtNet LightTests */,
+				831A27AF24438CB70063DA15 /* ArtNet LightUITests */,
+				831A278C24438CB60063DA15 /* Products */,
+				1FCAC39D9D68A30D5E517023 /* Pods */,
+				9357A1B4348CEF41ACB1A5CE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		831A278C24438CB60063DA15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				831A278B24438CB60063DA15 /* ArtNet Light.app */,
+				831A27A124438CB70063DA15 /* ArtNet LightTests.xctest */,
+				831A27AC24438CB70063DA15 /* ArtNet LightUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		831A278D24438CB60063DA15 /* ArtNet Light */ = {
+			isa = PBXGroup;
+			children = (
+				831A278E24438CB60063DA15 /* AppDelegate.swift */,
+				831A279024438CB60063DA15 /* SceneDelegate.swift */,
+				831A279224438CB60063DA15 /* ContentView.swift */,
+				831A279424438CB70063DA15 /* Assets.xcassets */,
+				831A279924438CB70063DA15 /* LaunchScreen.storyboard */,
+				831A279C24438CB70063DA15 /* Info.plist */,
+				831A279624438CB70063DA15 /* Preview Content */,
+			);
+			path = "ArtNet Light";
+			sourceTree = "<group>";
+		};
+		831A279624438CB70063DA15 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				831A279724438CB70063DA15 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		831A27A424438CB70063DA15 /* ArtNet LightTests */ = {
+			isa = PBXGroup;
+			children = (
+				831A27A524438CB70063DA15 /* ArtNet_LightTests.swift */,
+				831A27A724438CB70063DA15 /* Info.plist */,
+			);
+			path = "ArtNet LightTests";
+			sourceTree = "<group>";
+		};
+		831A27AF24438CB70063DA15 /* ArtNet LightUITests */ = {
+			isa = PBXGroup;
+			children = (
+				831A27B024438CB70063DA15 /* ArtNet_LightUITests.swift */,
+				831A27B224438CB70063DA15 /* Info.plist */,
+			);
+			path = "ArtNet LightUITests";
+			sourceTree = "<group>";
+		};
+		9357A1B4348CEF41ACB1A5CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				197174C75281B11992ED58D4 /* Pods_ArtNet_Light.framework */,
+				DA67D7D74A81F8F94D294F3D /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */,
+				DBDDBD8DDAAE104FCDC50937 /* Pods_ArtNet_LightTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		831A278A24438CB60063DA15 /* ArtNet Light */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831A27B524438CB70063DA15 /* Build configuration list for PBXNativeTarget "ArtNet Light" */;
+			buildPhases = (
+				93D1AD474BFA63106FF41420 /* [CP] Check Pods Manifest.lock */,
+				831A278724438CB60063DA15 /* Sources */,
+				831A278824438CB60063DA15 /* Frameworks */,
+				831A278924438CB60063DA15 /* Resources */,
+				392B7341CBCFF011CC2C5299 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ArtNet Light";
+			productName = "ArtNet Light";
+			productReference = 831A278B24438CB60063DA15 /* ArtNet Light.app */;
+			productType = "com.apple.product-type.application";
+		};
+		831A27A024438CB70063DA15 /* ArtNet LightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831A27B824438CB70063DA15 /* Build configuration list for PBXNativeTarget "ArtNet LightTests" */;
+			buildPhases = (
+				B8431D340F52BEDA1914E44F /* [CP] Check Pods Manifest.lock */,
+				831A279D24438CB70063DA15 /* Sources */,
+				831A279E24438CB70063DA15 /* Frameworks */,
+				831A279F24438CB70063DA15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				831A27A324438CB70063DA15 /* PBXTargetDependency */,
+			);
+			name = "ArtNet LightTests";
+			productName = "ArtNet LightTests";
+			productReference = 831A27A124438CB70063DA15 /* ArtNet LightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		831A27AB24438CB70063DA15 /* ArtNet LightUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 831A27BB24438CB70063DA15 /* Build configuration list for PBXNativeTarget "ArtNet LightUITests" */;
+			buildPhases = (
+				3BAB8DAF2166015326574D3D /* [CP] Check Pods Manifest.lock */,
+				831A27A824438CB70063DA15 /* Sources */,
+				831A27A924438CB70063DA15 /* Frameworks */,
+				831A27AA24438CB70063DA15 /* Resources */,
+				1313D0E509FA644A0F820A29 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				831A27AE24438CB70063DA15 /* PBXTargetDependency */,
+			);
+			name = "ArtNet LightUITests";
+			productName = "ArtNet LightUITests";
+			productReference = 831A27AC24438CB70063DA15 /* ArtNet LightUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		831A278324438CB60063DA15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Christian Mösl";
+				TargetAttributes = {
+					831A278A24438CB60063DA15 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					831A27A024438CB70063DA15 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 831A278A24438CB60063DA15;
+					};
+					831A27AB24438CB70063DA15 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 831A278A24438CB60063DA15;
+					};
+				};
+			};
+			buildConfigurationList = 831A278624438CB60063DA15 /* Build configuration list for PBXProject "ArtNet Light" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 831A278224438CB60063DA15;
+			productRefGroup = 831A278C24438CB60063DA15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				831A278A24438CB60063DA15 /* ArtNet Light */,
+				831A27A024438CB70063DA15 /* ArtNet LightTests */,
+				831A27AB24438CB70063DA15 /* ArtNet LightUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		831A278924438CB60063DA15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831A279B24438CB70063DA15 /* LaunchScreen.storyboard in Resources */,
+				831A279824438CB70063DA15 /* Preview Assets.xcassets in Resources */,
+				831A279524438CB70063DA15 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831A279F24438CB70063DA15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831A27AA24438CB70063DA15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1313D0E509FA644A0F820A29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		392B7341CBCFF011CC2C5299 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BAB8DAF2166015326574D3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArtNet Light-ArtNet LightUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D1AD474BFA63106FF41420 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArtNet Light-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8431D340F52BEDA1914E44F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArtNet LightTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		831A278724438CB60063DA15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831A278F24438CB60063DA15 /* AppDelegate.swift in Sources */,
+				831A279124438CB60063DA15 /* SceneDelegate.swift in Sources */,
+				831A279324438CB60063DA15 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831A279D24438CB70063DA15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831A27A624438CB70063DA15 /* ArtNet_LightTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		831A27A824438CB70063DA15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				831A27B124438CB70063DA15 /* ArtNet_LightUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		831A27A324438CB70063DA15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 831A278A24438CB60063DA15 /* ArtNet Light */;
+			targetProxy = 831A27A224438CB70063DA15 /* PBXContainerItemProxy */;
+		};
+		831A27AE24438CB70063DA15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 831A278A24438CB60063DA15 /* ArtNet Light */;
+			targetProxy = 831A27AD24438CB70063DA15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		831A279924438CB70063DA15 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				831A279A24438CB70063DA15 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		831A27B324438CB70063DA15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		831A27B424438CB70063DA15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		831A27B624438CB70063DA15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24CD2522759BC68D2D6AC14E /* Pods-ArtNet Light.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ArtNet Light/Preview Content\"";
+				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ArtNet Light/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-Light";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		831A27B724438CB70063DA15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03046DD71DD673D825A5616B /* Pods-ArtNet Light.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ArtNet Light/Preview Content\"";
+				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ArtNet Light/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-Light";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		831A27B924438CB70063DA15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15EF6618F8BF5A3EFFEEACD1 /* Pods-ArtNet LightTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				INFOPLIST_FILE = "ArtNet LightTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-LightTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArtNet Light.app/ArtNet Light";
+			};
+			name = Debug;
+		};
+		831A27BA24438CB70063DA15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5FC85A5E6852120042D4E7 /* Pods-ArtNet LightTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				INFOPLIST_FILE = "ArtNet LightTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-LightTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArtNet Light.app/ArtNet Light";
+			};
+			name = Release;
+		};
+		831A27BC24438CB70063DA15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D1E663E2004C659D1CACB6B /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				INFOPLIST_FILE = "ArtNet LightUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-LightUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ArtNet Light";
+			};
+			name = Debug;
+		};
+		831A27BD24438CB70063DA15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E810D08A24B2B139F3A519 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				INFOPLIST_FILE = "ArtNet LightUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-LightUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ArtNet Light";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		831A278624438CB60063DA15 /* Build configuration list for PBXProject "ArtNet Light" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831A27B324438CB70063DA15 /* Debug */,
+				831A27B424438CB70063DA15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831A27B524438CB70063DA15 /* Build configuration list for PBXNativeTarget "ArtNet Light" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831A27B624438CB70063DA15 /* Debug */,
+				831A27B724438CB70063DA15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831A27B824438CB70063DA15 /* Build configuration list for PBXNativeTarget "ArtNet LightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831A27B924438CB70063DA15 /* Debug */,
+				831A27BA24438CB70063DA15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		831A27BB24438CB70063DA15 /* Build configuration list for PBXNativeTarget "ArtNet LightUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				831A27BC24438CB70063DA15 /* Debug */,
+				831A27BD24438CB70063DA15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 831A278324438CB60063DA15 /* Project object */;
+}
