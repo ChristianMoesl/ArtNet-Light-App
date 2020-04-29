@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,13 @@
 		831A279B24438CB70063DA15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A279924438CB70063DA15 /* LaunchScreen.storyboard */; };
 		831A27A624438CB70063DA15 /* ArtNet_LightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A27A524438CB70063DA15 /* ArtNet_LightTests.swift */; };
 		831A27B124438CB70063DA15 /* ArtNet_LightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A27B024438CB70063DA15 /* ArtNet_LightUITests.swift */; };
+		8324DD212449E1EC00CA27EC /* LightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8324DD202449E1EC00CA27EC /* LightEntity.swift */; };
+		8324DD23244A2B7000CA27EC /* ArtNetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8324DD22244A2B6F00CA27EC /* ArtNetProtocol.swift */; };
+		834AB2F62443B8A50032505B /* LightDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AB2F52443B8A50032505B /* LightDetailView.swift */; };
+		834AB2F82443BAC80032505B /* ColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AB2F72443BAC80032505B /* ColorPicker.swift */; };
+		834AB2FB2443C22F0032505B /* ArtNet Light.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 834AB2F92443C22F0032505B /* ArtNet Light.xcdatamodeld */; };
+		838E5B5724549B3100BF9F66 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E5B5624549B3100BF9F66 /* Utils.swift */; };
+		83CACA4124445BD000327247 /* LightSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CACA4024445BD000327247 /* LightSettingsView.swift */; };
 		D6FC6BAC9503B72A08012DF2 /* Pods_ArtNet_LightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDDBD8DDAAE104FCDC50937 /* Pods_ArtNet_LightTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +50,7 @@
 		197174C75281B11992ED58D4 /* Pods_ArtNet_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_Light.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1E663E2004C659D1CACB6B /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24CD2522759BC68D2D6AC14E /* Pods-ArtNet Light.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light.debug.xcconfig"; sourceTree = "<group>"; };
-		831A278B24438CB60063DA15 /* ArtNet Light.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArtNet Light.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		831A278B24438CB60063DA15 /* ArtNet Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArtNet Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		831A278E24438CB60063DA15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		831A279024438CB60063DA15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		831A279224438CB60063DA15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +64,14 @@
 		831A27AC24438CB70063DA15 /* ArtNet LightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ArtNet LightUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		831A27B024438CB70063DA15 /* ArtNet_LightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtNet_LightUITests.swift; sourceTree = "<group>"; };
 		831A27B224438CB70063DA15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8324DD202449E1EC00CA27EC /* LightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightEntity.swift; sourceTree = "<group>"; };
+		8324DD22244A2B6F00CA27EC /* ArtNetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtNetProtocol.swift; sourceTree = "<group>"; };
+		834AB2F52443B8A50032505B /* LightDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDetailView.swift; sourceTree = "<group>"; };
+		834AB2F72443BAC80032505B /* ColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPicker.swift; sourceTree = "<group>"; };
+		834AB2FA2443C22F0032505B /* Light.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Light.xcdatamodel; sourceTree = "<group>"; };
+		838E5B5624549B3100BF9F66 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		838E5B582454A1FA00BF9F66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		83CACA4024445BD000327247 /* LightSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightSettingsView.swift; sourceTree = "<group>"; };
 		C6E810D08A24B2B139F3A519 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA67D7D74A81F8F94D294F3D /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_Light_ArtNet_LightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDDBD8DDAAE104FCDC50937 /* Pods_ArtNet_LightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_LightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +116,6 @@
 				15EF6618F8BF5A3EFFEEACD1 /* Pods-ArtNet LightTests.debug.xcconfig */,
 				FC5FC85A5E6852120042D4E7 /* Pods-ArtNet LightTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,7 +134,7 @@
 		831A278C24438CB60063DA15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				831A278B24438CB60063DA15 /* ArtNet Light.app */,
+				831A278B24438CB60063DA15 /* ArtNet Remote.app */,
 				831A27A124438CB70063DA15 /* ArtNet LightTests.xctest */,
 				831A27AC24438CB70063DA15 /* ArtNet LightUITests.xctest */,
 			);
@@ -133,10 +147,17 @@
 				831A278E24438CB60063DA15 /* AppDelegate.swift */,
 				831A279024438CB60063DA15 /* SceneDelegate.swift */,
 				831A279224438CB60063DA15 /* ContentView.swift */,
+				83CACA4024445BD000327247 /* LightSettingsView.swift */,
+				834AB2F72443BAC80032505B /* ColorPicker.swift */,
+				834AB2F52443B8A50032505B /* LightDetailView.swift */,
 				831A279424438CB70063DA15 /* Assets.xcassets */,
 				831A279924438CB70063DA15 /* LaunchScreen.storyboard */,
 				831A279C24438CB70063DA15 /* Info.plist */,
 				831A279624438CB70063DA15 /* Preview Content */,
+				834AB2F92443C22F0032505B /* ArtNet Light.xcdatamodeld */,
+				8324DD202449E1EC00CA27EC /* LightEntity.swift */,
+				8324DD22244A2B6F00CA27EC /* ArtNetProtocol.swift */,
+				838E5B5624549B3100BF9F66 /* Utils.swift */,
 			);
 			path = "ArtNet Light";
 			sourceTree = "<group>";
@@ -196,7 +217,7 @@
 			);
 			name = "ArtNet Light";
 			productName = "ArtNet Light";
-			productReference = 831A278B24438CB60063DA15 /* ArtNet Light.app */;
+			productReference = 831A278B24438CB60063DA15 /* ArtNet Remote.app */;
 			productType = "com.apple.product-type.application";
 		};
 		831A27A024438CB70063DA15 /* ArtNet LightTests */ = {
@@ -268,6 +289,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 831A278224438CB60063DA15;
 			productRefGroup = 831A278C24438CB60063DA15 /* Products */;
@@ -416,9 +438,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834AB2FB2443C22F0032505B /* ArtNet Light.xcdatamodeld in Sources */,
+				834AB2F62443B8A50032505B /* LightDetailView.swift in Sources */,
+				83CACA4124445BD000327247 /* LightSettingsView.swift in Sources */,
 				831A278F24438CB60063DA15 /* AppDelegate.swift in Sources */,
 				831A279124438CB60063DA15 /* SceneDelegate.swift in Sources */,
+				838E5B5724549B3100BF9F66 /* Utils.swift in Sources */,
 				831A279324438CB60063DA15 /* ContentView.swift in Sources */,
+				8324DD212449E1EC00CA27EC /* LightEntity.swift in Sources */,
+				8324DD23244A2B7000CA27EC /* ArtNetProtocol.swift in Sources */,
+				834AB2F82443BAC80032505B /* ColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +487,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				831A279A24438CB70063DA15 /* Base */,
+				838E5B582454A1FA00BF9F66 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -469,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -529,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -585,16 +617,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ArtNet Light/Preview Content\"";
-				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				DEVELOPMENT_TEAM = 64GBGY27R4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ArtNet Light/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-Light";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christianmoesl.ArtNet-Remote";
+				PRODUCT_NAME = "ArtNet Remote";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -606,16 +640,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ArtNet Light/Preview Content\"";
-				DEVELOPMENT_TEAM = 2C2YWH99C4;
+				DEVELOPMENT_TEAM = 64GBGY27R4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ArtNet Light/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "at.christianmoesl.ArtNet-Light";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christianmoesl.ArtNet-Remote";
+				PRODUCT_NAME = "ArtNet Remote";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -749,6 +785,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		834AB2F92443C22F0032505B /* ArtNet Light.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				834AB2FA2443C22F0032505B /* Light.xcdatamodel */,
+			);
+			currentVersion = 834AB2FA2443C22F0032505B /* Light.xcdatamodel */;
+			path = "ArtNet Light.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 831A278324438CB60063DA15 /* Project object */;
 }
