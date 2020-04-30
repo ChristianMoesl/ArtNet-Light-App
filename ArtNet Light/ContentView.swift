@@ -48,7 +48,7 @@ class LightViewModel: ObservableObject {
     var lightsCount: Int {
         store.count
     }
-    private var artNet = ArtNetMaster()
+    private let artNet: ArtNetMaster
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -74,7 +74,8 @@ class LightViewModel: ObservableObject {
         artNet.sendDmxDirectedBroadcast(ip: ip, net: Int(currentLight.net), subNet: Int(currentLight.subnet), color: color, channelAssignment: channelAssignment)
     }
     
-    init(store: LightStore) {
+    init(artNet: ArtNetMaster, store: LightStore) {
+        self.artNet = artNet
         self.store = store
         self.lights = store.getAll()
         self.color = UIColor.white
@@ -134,7 +135,7 @@ struct DimmerView: View {
                 }
             }
             .navigationBarTitle(Text("Dimmer"), displayMode: .inline)
-            .navigationBarItems(trailing: NavigationLink(destination: LightSettingsView()) {
+            .navigationBarItems(trailing: NavigationLink(destination: SettingsView()) {
                 Image(systemName: "gear")
                     .resizable()
                     .frame(width: 32, height: 32, alignment: .center)
@@ -146,10 +147,11 @@ struct DimmerView: View {
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var artNet: ArtNetMaster
     @FetchRequest(entity: LightEntity.entity(), sortDescriptors: []) var lights: FetchedResults<LightEntity>
     
     var body: some View {
-        DimmerView(lightViewModel: LightViewModel(store: LightStore(/*managedObjectContext: managedObjectContext, */lights: lights)))
+        DimmerView(lightViewModel: LightViewModel(artNet: artNet, store: LightStore(/*managedObjectContext: managedObjectContext, */lights: lights)))
     }
 }
 

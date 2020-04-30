@@ -1,5 +1,5 @@
 //
-//  LightSettingsView.swift
+//  SettingsView.swift
 //  ArtNet Light
 //
 //  Created by Christian Mösl on 13.04.20.
@@ -8,31 +8,14 @@
 
 import SwiftUI
 
-struct LightSettingsView: View {
+struct SettingsView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(entity: LightEntity.entity(), sortDescriptors: []) var lights: FetchedResults<LightEntity>
     @State var selection : UUID? = nil
     
     var body: some View {
-        List {
-            ForEach(lights, id: \.id) { light in
-                NavigationLink(destination: LightDetailView(light: light), tag: light.id!, selection: self.$selection) {
-                    VStack(alignment: .leading) {
-                        Text(light.name!)
-                        Text("Net: \(light.net) Sub-Net: \(light.subnet)")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                }
-            }
-            .onDelete { indexSet in
-                for index in indexSet {
-                    self.managedObjectContext.delete(self.lights[index])
-                }
-            }
-        }
-        .navigationBarTitle(Text("Lights"))
-        .navigationBarItems(trailing: Button(action: {
+        Form {
+            Section(header: Text("Lights"), footer: Button(action: {
                 let light = LightEntity(context: self.managedObjectContext)
                 light.id = UUID()
                 light.name = ""
@@ -42,20 +25,40 @@ struct LightSettingsView: View {
                 light.ipAddress3 = 0
                 light.net = 0
                 light.subnet = 0
-
+                
                 try? self.managedObjectContext.save()
-
+                
                 self.selection = light.id
-            }, label: {
-                Image(systemName: "plus.circle")
-                .resizable()
-                    .frame(width: 32, height: 32, alignment: .center)
-            })
-        )
+            }, label: { Text("Add").font(.callout) })) {
+                List {
+                    ForEach(lights, id: \.id) { light in
+                        NavigationLink(destination: LightDetailView(light: light), tag: light.id!, selection: self.$selection) {
+                            VStack(alignment: .leading) {
+                                Text(light.name!)
+                                Text("Net: \(light.net) Sub-Net: \(light.subnet)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            self.managedObjectContext.delete(self.lights[index])
+                        }
+                    }
+                }
+            }
+            Section(header: Text("General")) {
+                NavigationLink(destination: ArtNetDiagnoseView()) {
+                    Text("ArtNet Diagnose")
+                }
+            }
+        }
+        .navigationBarTitle(Text("Settings"))
     }
 }
 
-struct LightSettingsView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
    /* static let testData = [
         Light(name: "Spots", address: [192,168,1,255], net: 0, subnet: 0, port: 0),
         Light(name: "Led Streifen", address: [192,168,1,255], net: 0, subnet: 0, port: 1)
@@ -74,6 +77,6 @@ struct LightSettingsView_Previews: PreviewProvider {
         light.net = 1
         light.subnet = 0
 
-        return LightSettingsView().environment(\.managedObjectContext, context)
+        return SettingsView().environment(\.managedObjectContext, context)
     }
 }
