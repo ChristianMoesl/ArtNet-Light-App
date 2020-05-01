@@ -70,10 +70,12 @@ class LightViewModel: ObservableObject {
         let channelAssignment = currentLight.channelNumber == 3
             ? currentLight.channelAssignmentFor3
             : currentLight.channelAssignmentFor4
-
-        artNet.sendDmxDirectedBroadcast(ip: ip, net: Int(currentLight.net), subNet: Int(currentLight.subnet), color: color, channelAssignment: channelAssignment)
+        
+        for universe in currentLight.universeArray {
+            artNet.sendDmxDirectedBroadcast(ip: ip, net: Int(universe.net), subNet: Int(universe.subnet), color: color, channelAssignment: channelAssignment)
+        }
     }
-    
+
     init(artNet: ArtNetMaster, store: LightStore) {
         self.artNet = artNet
         self.store = store
@@ -171,8 +173,6 @@ struct ContentView_Previews: PreviewProvider {
         light.ipAddress1 = 168
         light.ipAddress2 = 1
         light.ipAddress3 = 255
-        light.net = 1
-        light.subnet = 0
 
         return ContentView().environment(\.managedObjectContext, context)
     }

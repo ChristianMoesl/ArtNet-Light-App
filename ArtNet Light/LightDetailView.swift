@@ -131,8 +131,6 @@ struct LightDetailView: View {
     
     private let channels3Options = permute(items: [ColorChannel.red, ColorChannel.green, ColorChannel.blue])
     private let channels4Options = permute(items: [ColorChannel.red, ColorChannel.green, ColorChannel.blue, ColorChannel.white])
-    private let netOptions = [Int16](0...127)
-    private let subnetOptions = [Int16](0...255)
 
     var body: some View {
         Form {
@@ -166,8 +164,9 @@ struct LightDetailView: View {
                         }
                     }
                 }
+                NavigationLink("Lightpoints", destination: UniverseListView(light: light))
             }
-            Section(header: Text("ArtNet")) {
+            /*Section(header: Text("ArtNet")) {
                 Picker("Net", selection: $light.net) {
                     ForEach(netOptions, id: \.self) { option in
                         Text("\(option)")
@@ -178,7 +177,7 @@ struct LightDetailView: View {
                         Text("\(option)")
                     }
                 }
-            }
+            }*/
         }
         .onReceive(self.light.objectWillChange) {
             do {
@@ -188,6 +187,80 @@ struct LightDetailView: View {
                 print(e)
             }
         }
+    }
+}
+
+struct UniverseDetailView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @ObservedObject var universe: UniverseEntity
+    
+    private let netOptions = [Int16](0...127)
+    private let subnetOptions = [Int16](0...255)
+    
+    var body: some View {
+        Form {
+            Picker("Net", selection: $universe.net) {
+                ForEach(netOptions, id: \.self) { option in
+                    Text("\(option)")
+                }
+            }
+            Picker("Sub-Net", selection: $universe.subnet) {
+                ForEach(subnetOptions, id: \.self) { option in
+                    Text("\(option)")
+                }
+            }
+            NumberField("Light Points", value: Binding(
+                get: { Int(self.universe.numOfLightPoints) },
+                set: { self.universe.numOfLightPoints = Int16($0) })
+            )
+        }
+        .onReceive(self.universe.objectWillChange) {
+            do {
+                print("saving universe")
+                try self.managedObjectContext.save()
+            } catch let e as NSError {
+                print(e)
+            }
+        }
+    }
+}
+
+struct UniverseListView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @ObservedObject var light: LightEntity
+    @State var selection : UUID? = nil
+    
+    var body: some View {
+        List {
+            ForEach(light.universeArray, id: \.id) { universe in
+                NavigationLink(destination: UniverseDetailView(universe: universe), tag: universe.id!, selection: self.$selection) {
+                    Text("Net: \(universe.net) SubNet: \(universe.subnet)")
+                }
+            }
+            .onDelete { indexSet in
+                for index in indexSet {
+                    //self.light.removeFromUniverses(self.light.universeArray[index])
+                    self.managedObjectContext.delete(self.light.universeArray[index])
+                }
+            }
+        }
+        .navigationBarTitle(Text("Universes"), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+                let universe = UniverseEntity(context: self.managedObjectContext)
+                universe.id = UUID()
+                universe.net = Int16(0)
+                universe.subnet = Int16(0)
+                universe.numOfLightPoints = Int16(1)
+
+                self.light.addToUniverses(universe)
+                try? self.managedObjectContext.save()
+                
+                self.selection = universe.id
+            }, label: {
+            Image(systemName: "plus")
+                .resizable()
+                .frame(width: 24, height: 24, alignment: .center)
+        }))
     }
 }
 
@@ -202,8 +275,6 @@ struct LightDetail_Previews: PreviewProvider {
         light.ipAddress1 = 168
         light.ipAddress2 = 1
         light.ipAddress3 = 255
-        light.net = 1
-        light.subnet = 0
 
         return LightDetailView(light: light).environment(\.managedObjectContext, context)
     }

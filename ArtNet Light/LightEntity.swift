@@ -1,32 +1,60 @@
 //
-//  Light.swift
-//  ArtNet Light
+//  Light+CoreDataProperties.swift
+//  
 //
-//  Created by Christian Mösl on 17.04.20.
-//  Copyright © 2020 Christian Mösl. All rights reserved.
+//  Created by Christian Mösl on 01.05.20.
+//
 //
 
 import Foundation
+import CoreData
 import SwiftUI
 
-enum ColorChannel: Int, CaseIterable, Identifiable {
-    case red = 0
-    case green
-    case blue
-    case white
-    
-    var id: ColorChannel {
-        self
+@objc(Light)
+public class LightEntity: NSManagedObject {
+
+}
+
+extension LightEntity {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<LightEntity> {
+        return NSFetchRequest<LightEntity>(entityName: "LightEntity")
     }
 
-    var literal: String {
-        switch self {
-        case .red: return "Red"
-        case .green: return "Green"
-        case .blue: return "Blue"
-        case .white: return "White"
-        }
-    }
+    @NSManaged public var alpha: Double
+    @NSManaged public var blue: Double
+    @NSManaged public var channelBlue: Int16
+    @NSManaged public var channelGreen: Int16
+    @NSManaged public var channelNumber: Int16
+    @NSManaged public var channelRed: Int16
+    @NSManaged public var channelWhite: Int16
+    @NSManaged public var green: Double
+    @NSManaged public var id: UUID?
+    @NSManaged public var ipAddress0: Int16
+    @NSManaged public var ipAddress1: Int16
+    @NSManaged public var ipAddress2: Int16
+    @NSManaged public var ipAddress3: Int16
+    @NSManaged public var name: String?
+    @NSManaged public var red: Double
+    @NSManaged public var universes: NSSet?
+
+}
+
+// MARK: Generated accessors for universes
+extension LightEntity {
+
+    @objc(addUniversesObject:)
+    @NSManaged public func addToUniverses(_ value: UniverseEntity)
+
+    @objc(removeUniversesObject:)
+    @NSManaged public func removeFromUniverses(_ value: UniverseEntity)
+
+    @objc(addUniverses:)
+    @NSManaged public func addToUniverses(_ values: NSSet)
+
+    @objc(removeUniverses:)
+    @NSManaged public func removeFromUniverses(_ values: NSSet)
+
 }
 
 extension LightEntity {
@@ -85,5 +113,10 @@ extension LightEntity {
                 ].sorted{ $0.1 < $1.1 }
             .map{ $0.0 }
         }
+    }
+    
+    public var universeArray: [UniverseEntity] {
+        let set = universes as? Set<UniverseEntity> ?? []
+        return set.map{ $0 }
     }
 }

@@ -23,9 +23,7 @@ struct SettingsView: View {
                 light.ipAddress1 = 0
                 light.ipAddress2 = 0
                 light.ipAddress3 = 0
-                light.net = 0
-                light.subnet = 0
-                
+
                 try? self.managedObjectContext.save()
                 
                 self.selection = light.id
@@ -35,7 +33,7 @@ struct SettingsView: View {
                         NavigationLink(destination: LightDetailView(light: light), tag: light.id!, selection: self.$selection) {
                             VStack(alignment: .leading) {
                                 Text(light.name!)
-                                Text("Net: \(light.net) Sub-Net: \(light.subnet)")
+                                Text("IP: \(light.name!)")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
@@ -48,9 +46,12 @@ struct SettingsView: View {
                     }
                 }
             }
-            Section(header: Text("General")) {
+            Section(header: Text("Advanced")) {
                 NavigationLink(destination: ArtNetDiagnoseView()) {
-                    Text("ArtNet Diagnose")
+                    Text("Configure Node Address")
+                }
+                NavigationLink(destination: ArtNetNodeListView()) {
+                    Text("List Nodes")
                 }
             }
         }
@@ -74,8 +75,6 @@ struct SettingsView_Previews: PreviewProvider {
         light.ipAddress1 = 168
         light.ipAddress2 = 1
         light.ipAddress3 = 255
-        light.net = 1
-        light.subnet = 0
 
         return SettingsView().environment(\.managedObjectContext, context)
     }
