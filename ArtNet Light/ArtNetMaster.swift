@@ -38,8 +38,6 @@ class ArtNetMaster: ObservableObject {
     static let protVerLo = UInt8(14)
     static let protocolVersion =  [ArtNetMaster.protVerHi, ArtNetMaster.protVerLo]
     
-    typealias IpAddress = (Int, Int, Int, Int)
-
     private var connection: NWConnection?
     private var pollConnection: NWConnection?
     
@@ -58,10 +56,7 @@ class ArtNetMaster: ObservableObject {
             print("ERROR: Can not initialize Listener on UDP port: \(ArtNetMaster.port)")
         }
     }*/
-    init() {
-        print("Hello")
-    }
-    
+
     private func stateDidChange(to newState: NWListener.State) {
         switch newState {
         case .setup:
@@ -170,12 +165,10 @@ class ArtNetMaster: ObservableObject {
         return values.sorted{ $0.1 > $1.1 }.map{ $0.0 }
     }
     
-    var i = 0
-
     func sendDmxDirectedBroadcast(ip: IpAddress, net: Int, subNet: Int, color: UIColor, channelAssignment: [ColorChannel]) {
         precondition((3...4).contains(channelAssignment.count), "RGB and RGBW supported only")
         
-        connection = prepare(connection: connection, to: ip)
+        connection = prepare(connection: connection, to: ip.description)
         
         let channelValues = computeColorChannelValues(color: color, channelAssignment: channelAssignment)
         
@@ -183,10 +176,7 @@ class ArtNetMaster: ObservableObject {
         
         let packet = prepareDmxHeader(net: net, subNet: subNet) + data
 
-        print("send dmx")
         connection!.send(content: packet, completion: .contentProcessed(({ nwError in
-            self.i = self.i + 1
-            print("send dmx done \(self.i)")
             print(nwError?.debugDescription)
         })))
     }
@@ -255,11 +245,6 @@ class ArtNetMaster: ObservableObject {
         return connection!
     }
    
-    private func prepare(connection: NWConnection?, to ip: (Int, Int, Int, Int)) -> NWConnection {
-        let host = "\(ip.0).\(ip.1).\(ip.2).\(ip.3)"
-        return prepare(connection: connection, to: host)
-    }
-    
     private func prepareAddressPacket(with params: ArtAddressParameters) -> Data {
         let opCode = UInt16(ArtNetOpCode.address.rawValue)
         

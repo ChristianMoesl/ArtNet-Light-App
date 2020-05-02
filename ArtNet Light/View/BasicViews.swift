@@ -61,3 +61,14 @@ struct StringField: View {
         }
     }
 }
+
+struct BasicViews_Previews: PreviewProvider {
+    static var previews: some View {
+        return Form {
+            NumberField("NumberField", value: .constant(123))
+            Info("Info", value: "bla")
+            StringField("StringField", value: .constant("Value"))
+        }
+    }
+}
+

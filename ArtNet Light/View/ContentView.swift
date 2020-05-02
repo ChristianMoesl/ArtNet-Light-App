@@ -10,24 +10,6 @@ import CoreData
 import Combine
 import SwiftHSVColorPicker
 
-class LightStore: ObservableObject {
-    //var managedObjectContext: NSManagedObjectContext
-    private var lights: FetchedResults<LightEntity>
-    
-    init(/*managedObjectContext: NSManagedObjectContext,*/ lights: FetchedResults<LightEntity>) {
-        //self.managedObjectContext = managedObjectContext
-        self.lights = lights
-    }
-    
-    func getAll() -> FetchedResults<LightEntity> {
-        lights
-    }
-    
-    var count: Int {
-        lights.count
-    }
-}
-
 class LightViewModel: ObservableObject {
     
     // Input
@@ -36,50 +18,43 @@ class LightViewModel: ObservableObject {
 
     // Output
     var name: String {
-        lightsCount > 0 ? currentLight.name_ : ""
+        lightsCount > 0 ? currentLight.name : ""
     }
     var canSelectNext: Bool {
-        selected < store.count - 1
+        selected < lights.count - 1
     }
     var canSelectPrevious: Bool {
         selected > 0
     }
     
     var lightsCount: Int {
-        store.count
+        lights.count
     }
     private let artNet: ArtNetMaster
     
     private var cancellableSet: Set<AnyCancellable> = []
     
-    private var store: LightStore
-    private var lights: FetchedResults<LightEntity>
+    private var lights: FetchedResults<Light>
     
-    private var currentLight: LightEntity {
+    private var currentLight: Light {
         lights[selected]
     }
     
     private func updateColor(color: UIColor) {
         currentLight.color = color
         
-        let ip = (Int(currentLight.ipAddress0),
-                  Int(currentLight.ipAddress1),
-                  Int(currentLight.ipAddress2),
-                  Int(currentLight.ipAddress3))
-
         let channelAssignment = currentLight.channelNumber == 3
             ? currentLight.channelAssignmentFor3
             : currentLight.channelAssignmentFor4
         
-        for universe in currentLight.universeArray {
-            artNet.sendDmxDirectedBroadcast(ip: ip, net: Int(universe.net), subNet: Int(universe.subnet), color: color, channelAssignment: channelAssignment)
+        for universe in currentLight.universes {
+            artNet.sendDmxDirectedBroadcast(ip: currentLight.ipAddress, net: universe.net, subNet: universe.subnet, color: color, channelAssignment: channelAssignment)
         }
     }
 
-    init(artNet: ArtNetMaster, store: LightStore) {
+    init(artNet: ArtNetMaster, lights: FetchedResults<Light>) {
         self.artNet = artNet
-        self.store = store
-        self.lights = store.getAll()
+        self.lights = lights
         self.color = UIColor.white
         
         if lights.count > 0 && currentLight.color != color {
@@ -150,10 +125,10 @@ struct DimmerView: View {
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var artNet: ArtNetMaster
-    @FetchRequest(entity: LightEntity.entity(), sortDescriptors: []) var lights: FetchedResults<LightEntity>
+    @FetchRequest(entity: Light.entity(), sortDescriptors: []) var lights: FetchedResults<Light>
     
     var body: some View {
-        DimmerView(lightViewModel: LightViewModel(artNet: artNet, store: LightStore(/*managedObjectContext: managedObjectContext, */lights: lights)))
+        DimmerView(lightViewModel: LightViewModel(artNet: artNet, lights: lights))
     }
 }
 
@@ -166,13 +141,10 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let light = LightEntity(context: context)
+        let light = Light(context: context)
         light.id = UUID()
         light.name = "Led Spots"
-        light.ipAddress0 = 192
-        light.ipAddress1 = 168
-        light.ipAddress2 = 1
-        light.ipAddress3 = 255
+        light.ipAddress = IpAddress(192, 168, 1, 255)
 
         return ContentView().environment(\.managedObjectContext, context)
     }

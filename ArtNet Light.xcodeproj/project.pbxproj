@@ -27,8 +27,9 @@
 		838885AC245B803800F28268 /* BasicViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838885AB245B803800F28268 /* BasicViews.swift */; };
 		838E5B5724549B3100BF9F66 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838E5B5624549B3100BF9F66 /* Utils.swift */; };
 		83CACA4124445BD000327247 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CACA4024445BD000327247 /* SettingsView.swift */; };
-		83DA3CA9245CC0CE00CEA451 /* LightEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DA3CA7245CC0CD00CEA451 /* LightEntity.swift */; };
-		83DA3CAA245CC0CE00CEA451 /* UniverseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DA3CA5245CC0CD00CEA451 /* UniverseEntity.swift */; };
+		83DA3CA9245CC0CE00CEA451 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DA3CA7245CC0CD00CEA451 /* Light.swift */; };
+		83DA3CAA245CC0CE00CEA451 /* Universe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DA3CA5245CC0CD00CEA451 /* Universe.swift */; };
+		83DA3CBA245DADFD00CEA451 /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DA3CB9245DADFD00CEA451 /* Basic.swift */; };
 		83F92CAC245A14FF006676CB /* ArtNetDiagnoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F92CAB245A14FF006676CB /* ArtNetDiagnoseView.swift */; };
 		D6FC6BAC9503B72A08012DF2 /* Pods_ArtNet_LightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDDBD8DDAAE104FCDC50937 /* Pods_ArtNet_LightTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,8 +82,9 @@
 		838E5B5624549B3100BF9F66 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		838E5B582454A1FA00BF9F66 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		83CACA4024445BD000327247 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		83DA3CA5245CC0CD00CEA451 /* UniverseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UniverseEntity.swift; path = "/Users/cm/Workspace/artnet-light-app/ArtNet Light/UniverseEntity.swift"; sourceTree = "<absolute>"; };
-		83DA3CA7245CC0CD00CEA451 /* LightEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LightEntity.swift; path = "/Users/cm/Workspace/artnet-light-app/ArtNet Light/LightEntity.swift"; sourceTree = "<absolute>"; };
+		83DA3CA5245CC0CD00CEA451 /* Universe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Universe.swift; path = "/Users/cm/Workspace/artnet-light-app/ArtNet Light/Universe.swift"; sourceTree = "<absolute>"; };
+		83DA3CA7245CC0CD00CEA451 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Light.swift; path = "/Users/cm/Workspace/artnet-light-app/ArtNet Light/Light.swift"; sourceTree = "<absolute>"; };
+		83DA3CB9245DADFD00CEA451 /* Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic.swift; sourceTree = "<group>"; };
 		83F92CAB245A14FF006676CB /* ArtNetDiagnoseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtNetDiagnoseView.swift; sourceTree = "<group>"; };
 		C6E810D08A24B2B139F3A519 /* Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA67D7D74A81F8F94D294F3D /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_Light_ArtNet_LightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,14 +158,10 @@
 		831A278D24438CB60063DA15 /* ArtNet Light */ = {
 			isa = PBXGroup;
 			children = (
-				83DA3CA5245CC0CD00CEA451 /* UniverseEntity.swift */,
-				83DA3CA7245CC0CD00CEA451 /* LightEntity.swift */,
+				83DA3CB6245CCA2600CEA451 /* View */,
+				83DA3CB5245CCA0D00CEA451 /* Entity */,
 				831A278E24438CB60063DA15 /* AppDelegate.swift */,
 				831A279024438CB60063DA15 /* SceneDelegate.swift */,
-				831A279224438CB60063DA15 /* ContentView.swift */,
-				83CACA4024445BD000327247 /* SettingsView.swift */,
-				834AB2F72443BAC80032505B /* ColorPicker.swift */,
-				834AB2F52443B8A50032505B /* LightDetailView.swift */,
 				831A279424438CB70063DA15 /* Assets.xcassets */,
 				831A279924438CB70063DA15 /* LaunchScreen.storyboard */,
 				831A279C24438CB70063DA15 /* Info.plist */,
@@ -172,10 +170,7 @@
 				8324DD202449E1EC00CA27EC /* ColorChannel.swift */,
 				8324DD22244A2B6F00CA27EC /* ArtNetMaster.swift */,
 				838E5B5624549B3100BF9F66 /* Utils.swift */,
-				83F92CAB245A14FF006676CB /* ArtNetDiagnoseView.swift */,
-				838885A9245B38CE00F28268 /* ArtNetNodeListView.swift */,
 				837C7831245B1D9000171D97 /* ArtNetProtocol.swift */,
-				838885AB245B803800F28268 /* BasicViews.swift */,
 			);
 			path = "ArtNet Light";
 			sourceTree = "<group>";
@@ -204,6 +199,30 @@
 				831A27B224438CB70063DA15 /* Info.plist */,
 			);
 			path = "ArtNet LightUITests";
+			sourceTree = "<group>";
+		};
+		83DA3CB5245CCA0D00CEA451 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				83DA3CA5245CC0CD00CEA451 /* Universe.swift */,
+				83DA3CA7245CC0CD00CEA451 /* Light.swift */,
+				83DA3CB9245DADFD00CEA451 /* Basic.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		83DA3CB6245CCA2600CEA451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				838885AB245B803800F28268 /* BasicViews.swift */,
+				831A279224438CB60063DA15 /* ContentView.swift */,
+				83CACA4024445BD000327247 /* SettingsView.swift */,
+				834AB2F52443B8A50032505B /* LightDetailView.swift */,
+				834AB2F72443BAC80032505B /* ColorPicker.swift */,
+				83F92CAB245A14FF006676CB /* ArtNetDiagnoseView.swift */,
+				838885A9245B38CE00F28268 /* ArtNetNodeListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9357A1B4348CEF41ACB1A5CE /* Frameworks */ = {
@@ -462,15 +481,16 @@
 				838885AC245B803800F28268 /* BasicViews.swift in Sources */,
 				838885AA245B38CE00F28268 /* ArtNetNodeListView.swift in Sources */,
 				831A278F24438CB60063DA15 /* AppDelegate.swift in Sources */,
+				83DA3CBA245DADFD00CEA451 /* Basic.swift in Sources */,
 				83F92CAC245A14FF006676CB /* ArtNetDiagnoseView.swift in Sources */,
 				831A279124438CB60063DA15 /* SceneDelegate.swift in Sources */,
-				83DA3CAA245CC0CE00CEA451 /* UniverseEntity.swift in Sources */,
+				83DA3CAA245CC0CE00CEA451 /* Universe.swift in Sources */,
 				838E5B5724549B3100BF9F66 /* Utils.swift in Sources */,
 				837C7832245B1D9000171D97 /* ArtNetProtocol.swift in Sources */,
 				831A279324438CB60063DA15 /* ContentView.swift in Sources */,
 				8324DD212449E1EC00CA27EC /* ColorChannel.swift in Sources */,
 				8324DD23244A2B7000CA27EC /* ArtNetMaster.swift in Sources */,
-				83DA3CA9245CC0CE00CEA451 /* LightEntity.swift in Sources */,
+				83DA3CA9245CC0CE00CEA451 /* Light.swift in Sources */,
 				834AB2F82443BAC80032505B /* ColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

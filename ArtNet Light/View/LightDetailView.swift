@@ -12,10 +12,8 @@ import Combine
 
 
 class LightDetailViewModel: ObservableObject {
-    var light: LightEntity
-    
-    typealias IpAddress = (Int, Int, Int, Int)
-    
+    var light: Light
+
     // Input
     @Published var ipAddressField: String
     @Published var channelAssignmentFor3: [ColorChannel]
@@ -27,14 +25,8 @@ class LightDetailViewModel: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     
     private func saveIPAddress(address: IpAddress) {
-        let ip = (Int16(address.0), Int16(address.1), Int16(address.2), Int16(address.3))
-        
-        if self.light.ipAddress0 != ip.0 || self.light.ipAddress1 != ip.1
-            || self.light.ipAddress2 != ip.2 || self.light.ipAddress3 != ip.3 {
-            self.light.ipAddress0 = ip.0
-            self.light.ipAddress1 = ip.1
-            self.light.ipAddress2 = ip.2
-            self.light.ipAddress3 = ip.3
+        if light.ipAddress != address {
+            light.ipAddress = address
         }
     }
     
@@ -44,7 +36,7 @@ class LightDetailViewModel: ObservableObject {
         let matches = text.groups(for: regex)
         
         return matches.count == 0 ?
-            nil : (Int(matches[0][1])!, Int(matches[0][2])!, Int(matches[0][3])!, Int(matches[0][4])!)
+            nil : IpAddress(Int(matches[0][1])!, Int(matches[0][2])!, Int(matches[0][3])!, Int(matches[0][4])!)
     }
     
     private var ipAddressValidator: AnyPublisher<IpAddress?, Never> {
@@ -64,9 +56,9 @@ class LightDetailViewModel: ObservableObject {
     }
     
 
-    init(light: LightEntity) {
+    init(light: Light) {
         self.light = light
-        self.ipAddressField = "\(light.ipAddress0).\(light.ipAddress1).\(light.ipAddress2).\(light.ipAddress3)"
+        self.ipAddressField = light.ipAddress.description
         self.channelAssignmentFor3 = light.channelAssignmentFor3
         self.channelAssignmentFor4 = light.channelAssignmentFor4
 
@@ -120,22 +112,22 @@ func permute<C: Collection>(items: C) -> [[C.Iterator.Element]] {
 
 struct LightDetailView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    @ObservedObject var light: LightEntity
+    @ObservedObject var light: Light
     
     @ObservedObject var viewModel: LightDetailViewModel
 
-    init(light: LightEntity) {
+    init(light: Light) {
         self.light = light
         self.viewModel = LightDetailViewModel(light: light)
     }
     
-    private let channels3Options = permute(items: [ColorChannel.red, ColorChannel.green, ColorChannel.blue])
-    private let channels4Options = permute(items: [ColorChannel.red, ColorChannel.green, ColorChannel.blue, ColorChannel.white])
+    private let channels3Options = permute(items: ColorChannel.allCases.filter{ $0 != .white })
+    private let channels4Options = permute(items: ColorChannel.allCases)
 
     var body: some View {
         Form {
             Section(header: Text(LocalizedStringKey("Name"))) {
-                TextField(LocalizedStringKey("Name"), text: $light.name_)
+                TextField(LocalizedStringKey("Name"), text: $light.name)
             }
             Section(header: Text(LocalizedStringKey("Network"))) {
                 TextField("IP Address", text: $viewModel.ipAddressField)
@@ -192,7 +184,7 @@ struct LightDetailView: View {
 
 struct UniverseDetailView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    @ObservedObject var universe: UniverseEntity
+    @ObservedObject var universe: Universe
     
     private let netOptions = [Int16](0...127)
     private let subnetOptions = [Int16](0...255)
@@ -209,10 +201,7 @@ struct UniverseDetailView: View {
                     Text("\(option)")
                 }
             }
-            NumberField("Light Points", value: Binding(
-                get: { Int(self.universe.numOfLightPoints) },
-                set: { self.universe.numOfLightPoints = Int16($0) })
-            )
+            NumberField("Light Points", value: $universe.numberOfLightPoints)
         }
         .onReceive(self.universe.objectWillChange) {
             do {
@@ -227,33 +216,29 @@ struct UniverseDetailView: View {
 
 struct UniverseListView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
-    @ObservedObject var light: LightEntity
+    @ObservedObject var light: Light
     @State var selection : UUID? = nil
     
     var body: some View {
         List {
-            ForEach(light.universeArray, id: \.id) { universe in
-                NavigationLink(destination: UniverseDetailView(universe: universe), tag: universe.id!, selection: self.$selection) {
+            ForEach(light.universes, id: \.id) { universe in
+                NavigationLink(destination: UniverseDetailView(universe: universe), tag: universe.id, selection: self.$selection) {
                     Text("Net: \(universe.net) SubNet: \(universe.subnet)")
                 }
             }
             .onDelete { indexSet in
                 for index in indexSet {
-                    //self.light.removeFromUniverses(self.light.universeArray[index])
-                    self.managedObjectContext.delete(self.light.universeArray[index])
+                    self.managedObjectContext.delete(self.light.universes[index])
                 }
             }
         }
         .navigationBarTitle(Text("Universes"), displayMode: .inline)
         .navigationBarItems(trailing: Button(action: {
-                let universe = UniverseEntity(context: self.managedObjectContext)
+                let universe = Universe(context: self.managedObjectContext)
                 universe.id = UUID()
-                universe.net = Int16(0)
-                universe.subnet = Int16(0)
-                universe.numOfLightPoints = Int16(1)
 
                 self.light.addToUniverses(universe)
-                try? self.managedObjectContext.save()
+                try! self.managedObjectContext.save()
                 
                 self.selection = universe.id
             }, label: {
@@ -268,13 +253,10 @@ struct LightDetail_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
          
-        let light = LightEntity(context: context)
+        let light = Light(context: context)
         light.id = UUID()
         light.name = "Led Spots"
-        light.ipAddress0 = 192
-        light.ipAddress1 = 168
-        light.ipAddress2 = 1
-        light.ipAddress3 = 255
+        light.ipAddress = IpAddress(192,168,1,255)
 
         return LightDetailView(light: light).environment(\.managedObjectContext, context)
     }
