@@ -7,38 +7,67 @@
 //
 
 import SwiftUI
+import Combine
+
+class SettingsViewModel: ObservableObject {
+    @Published var lightDetails = [LightDetailViewModel]()
+    @Published var selection: UUID? = nil
+    
+    private let lightStore: LightStore
+    private var cancellableSet: Set<AnyCancellable> = []
+
+    init(_ lightStore: LightStore) {
+        self.lightStore = lightStore
+        self.lightDetails = prepareLightViewModels()
+        
+        lightStore.objectWillChange
+            .sink(receiveValue: { [weak self] value in
+                if let s = self {
+                    s.lightDetails = s.prepareLightViewModels()
+                }
+            })
+            .store(in: &cancellableSet)
+    }
+    
+    func addLight() {
+        selection = lightStore.createLight()
+    }
+    
+    func deleteLights(_ indexSet: IndexSet) {
+        lightStore.deleteLights(with: indexSet)
+    }
+    
+    private func prepareLightViewModels() -> [LightDetailViewModel] {
+        lightStore.lights.map{ light in
+            if let matching = self.lightDetails.filter({ $0.id == light.id }).first {
+                return matching
+            } else {
+                return LightDetailViewModel(for: light, in: lightStore)
+            }
+        }
+    }
+}
 
 struct SettingsView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(entity: Light.entity(), sortDescriptors: []) var lights: FetchedResults<Light>
-    @State var selection : UUID? = nil
-    
+    @ObservedObject var viewModel: SettingsViewModel
+
     var body: some View {
         Form {
             Section(header: Text("Lights"), footer: Button(action: {
-                let light = Light(context: self.managedObjectContext)
-                light.id = UUID()
-
-                try! self.managedObjectContext.save()
-                
-                self.selection = light.id
+                self.viewModel.addLight()
             }, label: { Text("Add").font(.callout) })) {
                 List {
-                    ForEach(lights, id: \.id) { light in
-                        NavigationLink(destination: LightDetailView(light: light), tag: light.id, selection: self.$selection) {
+                    ForEach(viewModel.lightDetails, id: \.id) { light in
+                        NavigationLink(destination: LightDetailView(viewModel: light), tag: light.id, selection: self.$viewModel.selection) {
                             VStack(alignment: .leading) {
                                 Text(light.name)
-                                Text("IP: \(light.name)")
+                                Text("IP: \(light.ipAddress)")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
                         }
                     }
-                    .onDelete { indexSet in
-                        for index in indexSet {
-                            self.managedObjectContext.delete(self.lights[index])
-                        }
-                    }
+                    .onDelete { self.viewModel.deleteLights($0) }
                 }
             }
             Section(header: Text("Advanced")) {
@@ -54,16 +83,3 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let light = Light(context: context)
-        light.id = UUID()
-        light.name = "Led Spots"
-        light.ipAddress = IpAddress(192,168,1,255)
-
-        return SettingsView().environment(\.managedObjectContext, context)
-    }
-}

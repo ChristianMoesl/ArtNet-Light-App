@@ -43,6 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
         */
         let container = NSPersistentContainer(name: "ArtNet Light")
+        
+        /*
+         Migrate the data model (lightweight migration)
+         */
+        let description = NSPersistentStoreDescription()
+        description.shouldMigrateStoreAutomatically = true
+        description.shouldInferMappingModelAutomatically = true
+        container.persistentStoreDescriptions.append(description)
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

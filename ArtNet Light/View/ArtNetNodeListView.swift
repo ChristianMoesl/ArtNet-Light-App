@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ArtNodeDetailView: View {
-    let node: ArtNodeInfo
+    let node: ArtNetNodeInfo
     
     var body: some View {
         Form {
             Info("Short Name", value: node.shortName)
-            Info("IP Address", value: "\(node.ip.0).\(node.ip.1).\(node.ip.2).\(node.ip.3)")
+            Info("IP Address", value: node.ip.description)
             Info("MAC", value: node.mac.map{ String($0, radix: 16, uppercase: true) }.joined(separator: ":"))
             Info("Firmware Version", value: node.firmwareVersion)
             Info("Net Switch", value: node.net.description)
@@ -38,7 +38,7 @@ struct ArtNetNodeListView: View {
                 NavigationLink(destination: ArtNodeDetailView(node: node), tag: node.id, selection: self.$selection) {
                     VStack(alignment: .leading) {
                         Text(node.shortName)
-                        Text("IP: \(node.ip.0).\(node.ip.1).\(node.ip.2).\(node.ip.3)")
+                        Text("IP: \(node.ip.description)")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                     }

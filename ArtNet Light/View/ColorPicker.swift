@@ -6,50 +6,76 @@
 //  Copyright © 2020 Christian Mösl. All rights reserved.
 //
 
+import UIKit
 import SwiftUI
 import SwiftHSVColorPicker
 
-private class MyColorPicker: SwiftHSVColorPicker {
+protocol MyColorPickerDelegate: class {
+    func colorDidChange(color: UIColor)
+}
+
+class MyColorPicker: SwiftHSVColorPicker {
+
     override var color: UIColor! {
         didSet {
-            colorBinding.wrappedValue = color
-            colorBinding.update()
+            delegate?.colorDidChange(color: color)
         }
     }
-    private var colorBinding: Binding<UIColor>!
-    
+    weak var delegate: MyColorPickerDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        fatalError("init(coder:) has not been implemented")
     }
-    
-    init(frame: CGRect, colorBinding: Binding<UIColor>) {
-        super.init(frame: frame)
-        self.colorBinding = colorBinding
-    }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 struct ColorPicker: UIViewRepresentable {
-    @Binding var color: UIColor
+    typealias UIViewType = MyColorPicker
     
-    func makeUIView(context: Context) -> SwiftHSVColorPicker {
-        MyColorPicker(frame: CGRect(x: 0, y: 0, width: 300, height: 400), colorBinding: $color)
+    let frame: CGRect
+    @Binding var color: UIColor
+
+    func makeUIView(context: Context) -> MyColorPicker {
+        print("\(frame)")
+        let f = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: frame.width + frame.width * 0.3333)
+        print("\(f)")
+        let view = MyColorPicker(frame: frame)
+        view.delegate = context.coordinator
+        return view
     }
 
-    func updateUIView(_ uiView: SwiftHSVColorPicker, context: Context) {
-        if uiView.color == nil {
+    func updateUIView(_ uiView: MyColorPicker, context: Context) {
+        if uiView.color == nil || uiView.color != color {
             uiView.setViewColor(color)
+        }
+    }
+    
+    func makeCoordinator() -> ColorPicker.Coordinator {
+        Coordinator(self)
+    }
+    
+    static func dismantleUIView(_ uiView: MyColorPicker, coordinator: Coordinator) {
+        uiView.delegate = nil
+    }
+
+    final class Coordinator: NSObject, MyColorPickerDelegate {
+        private let pickerView: ColorPicker
+
+        init(_ pickerView: ColorPicker) {
+            self.pickerView = pickerView
+        }
+
+        func colorDidChange(color: UIColor) {
+            pickerView.color = color
         }
     }
 }
 
-struct ColorPicker_Previews: PreviewProvider {
-    @State var color = UIColor.white
+/*struct ColorPicker_Previews: PreviewProvider {
     static var previews: some View {
         ColorPicker(color: .constant(UIColor.white))
     }
-}
+}*/

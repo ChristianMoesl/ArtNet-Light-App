@@ -8,24 +8,19 @@
 
 import SwiftUI
 
-
-
-
-
-
 private struct ArtAddressView: View {
     @EnvironmentObject var artNet: ArtNetMaster
     
     var host: String
     
-    @State var netSwitch: Int = 0
-    @State var bindIndex: Int = 1
-    @State var shortName: String = ""
-    @State var longName: String = ""
-    @State var swIn: [SwitchProgValues] = [.noChange, .noChange, .noChange, .noChange]
-    @State var swOut: [SwitchProgValues] = [.noChange, .noChange, .noChange, .noChange]
-    @State var subSwitch: Int = 0
-    @State var command: ArtAddressCommand = .none
+    @State var netSwitch = 0
+    @State var bindIndex = 1
+    @State var shortName = ""
+    @State var longName = ""
+    @State var swIn = [SwitchProgValues](repeating: .noChange, count: 4)
+    @State var swOut = [SwitchProgValues](repeating: .noChange, count: 4)
+    @State var subSwitch = 0
+    @State var command = ArtAddressCommand.none
      
 
     var body: some View {
@@ -55,7 +50,7 @@ private struct ArtAddressView: View {
                 }
             }
             Button(action: {
-                let params = ArtNetMaster.ArtAddressParameters(
+                let params = ArtAddressParameters(
                     net: self.netSwitch,
                     subNet: self.subSwitch,
                     bindIndex: self.bindIndex,

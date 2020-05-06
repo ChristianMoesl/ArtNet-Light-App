@@ -12,7 +12,16 @@ import SwiftUI
 
 @objc(Light)
 public class Light: NSManagedObject {
+    override public init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+        
+        id = UUID()
+        created = Date()
+    }
     
+    public convenience init(context moc: NSManagedObjectContext) {
+        self.init(entity: Light.entity(), insertInto: moc)
+    }
 }
 
 extension Light {
@@ -22,6 +31,7 @@ extension Light {
     }
 
     @NSManaged public var id: UUID
+    @NSManaged public var created: Date
     @NSManaged public var name: String
     @NSManaged private var alpha: Double
     @NSManaged private var red: Double
@@ -43,34 +53,34 @@ extension Light {
 // MARK: Generated accessors for universes
 extension Light {
 
-    @objc(insertObject:inUniversesAtIndex:)
+    @objc(insertObject:inUniverses_AtIndex:)
     @NSManaged public func insertIntoUniverses(_ value: Universe, at idx: Int)
 
-    @objc(removeObjectFromUniversesAtIndex:)
+    @objc(removeObjectFromUniverses_AtIndex:)
     @NSManaged public func removeFromUniverses(at idx: Int)
 
-    @objc(insertUniverses:atIndexes:)
+    @objc(insertUniverses_:atIndexes:)
     @NSManaged public func insertIntoUniverses(_ values: [Universe], at indexes: NSIndexSet)
 
-    @objc(removeUniversesAtIndexes:)
+    @objc(removeUniverses_AtIndexes:)
     @NSManaged public func removeFromUniverses(at indexes: IndexSet)
 
-    @objc(replaceObjectInUniversesAtIndex:withObject:)
+    @objc(replaceObjectInUniverses_AtIndex:withObject:)
     @NSManaged public func replaceUniverses(at idx: Int, with value: Universe)
 
-    @objc(replaceUniversesAtIndexes:withUniverses:)
+    @objc(replaceUniverses_AtIndexes:withUniverses_:)
     @NSManaged public func replaceUniverses(at indexes: IndexSet, with values: [Universe])
 
-    @objc(addUniversesObject:)
+    @objc(addUniverses_Object:)
     @NSManaged public func addToUniverses(_ value: Universe)
 
-    @objc(removeUniversesObject:)
+    @objc(removeUniverses_Object:)
     @NSManaged public func removeFromUniverses(_ value: Universe)
 
-    @objc(addUniverses:)
+    @objc(addUniverses_:)
     @NSManaged public func addToUniverses(_ values: NSOrderedSet)
 
-    @objc(removeUniverses:)
+    @objc(removeUniverses_:)
     @NSManaged public func removeFromUniverses(_ values: NSOrderedSet)
 }
 

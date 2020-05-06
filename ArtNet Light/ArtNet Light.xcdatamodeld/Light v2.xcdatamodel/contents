@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Light" representedClassName=".Light" syncable="YES">
+        <attribute name="alpha" optional="YES" attributeType="Double" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="blue" optional="YES" attributeType="Double" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="channelBlue" optional="YES" attributeType="Integer 16" defaultValueString="2" usesScalarValueType="YES"/>
+        <attribute name="channelGreen" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="channelNumber_" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="channelRed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="channelWhite" optional="YES" attributeType="Integer 16" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="created" attributeType="Date" defaultDateTimeInterval="609976800" usesScalarValueType="NO"/>
+        <attribute name="green" optional="YES" attributeType="Double" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="YES"/>
+        <attribute name="ipAddress0" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ipAddress1" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ipAddress2" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ipAddress3" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="red" optional="YES" attributeType="Double" defaultValueString="1" usesScalarValueType="YES"/>
+        <relationship name="universes_" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Universe" inverseName="light" inverseEntity="Universe"/>
+    </entity>
+    <entity name="Universe" representedClassName=".Universe" syncable="YES">
+        <attribute name="created" attributeType="Date" defaultDateTimeInterval="609976800" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="net_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numOfLightPoints_" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="subnet_" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="light" maxCount="1" deletionRule="Nullify" destinationEntity="Light" inverseName="universes_" inverseEntity="Light"/>
+    </entity>
+    <elements>
+        <element name="Light" positionX="-63" positionY="-18" width="128" height="298"/>
+        <element name="Universe" positionX="206.68359375" positionY="146.9921875" width="128" height="133"/>
+    </elements>
+</model>

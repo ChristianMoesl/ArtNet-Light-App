@@ -11,7 +11,16 @@ import CoreData
 
 @objc(Universe)
 public class Universe: NSManagedObject {
-
+    override public init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+        
+        id = UUID()
+        created = Date()
+    }
+    
+    public convenience init(context moc: NSManagedObjectContext) {
+        self.init(entity: Universe.entity(), insertInto: moc)
+    }
 }
 
 extension Universe {
@@ -19,10 +28,12 @@ extension Universe {
         return NSFetchRequest<Universe>(entityName: "Universe")
     }
 
+    @NSManaged public var id: UUID
+    @NSManaged public var created: Date
+    @NSManaged public var light: Light
     @NSManaged private var net_: Int16
     @NSManaged private var subnet_: Int16
     @NSManaged private var numOfLightPoints_: Int16
-    @NSManaged public var id: UUID
 }
 
 extension Universe {

@@ -134,3 +134,14 @@ enum SwitchProgValues: Int, Identifiable, CaseIterable {
         }
     }
 }
+
+struct ArtAddressParameters {
+    var net: Int
+    var subNet: Int
+    var bindIndex: Int
+    var shortName: String
+    var longName: String
+    var swIn: [SwitchProgValues]
+    var swOut: [SwitchProgValues]
+    var command: ArtAddressCommand
+}
