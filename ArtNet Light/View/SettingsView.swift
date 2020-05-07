@@ -13,6 +13,8 @@ class SettingsViewModel: ObservableObject {
     @Published var lightDetails = [LightDetailViewModel]()
     @Published var selection: UUID? = nil
     
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+    
     private let lightStore: LightStore
     private var cancellableSet: Set<AnyCancellable> = []
 
@@ -50,32 +52,53 @@ class SettingsViewModel: ObservableObject {
 
 struct SettingsView: View {
     @ObservedObject var viewModel: SettingsViewModel
+    
+    func lightDetailLink(_ light: LightDetailViewModel) -> some View {
+        NavigationLink(destination: LightDetailView(viewModel: light), tag: light.id, selection: self.$viewModel.selection) {
+            VStack(alignment: .leading) {
+                Text(light.name)
+                Text("IP: \(light.ipAddress)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+    
+    var addLightButton: some View {
+        HStack(alignment: .center) {
+            Button(action: {
+                self.viewModel.addLight()
+            }, label: {
+                Text("Add")
+                    .font(.callout)
+                    .frame(alignment: .center)
+            })
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+        .padding(6)
+    }
 
     var body: some View {
-        Form {
-            Section(header: Text("Lights"), footer: Button(action: {
-                self.viewModel.addLight()
-            }, label: { Text("Add").font(.callout) })) {
-                List {
-                    ForEach(viewModel.lightDetails, id: \.id) { light in
-                        NavigationLink(destination: LightDetailView(viewModel: light), tag: light.id, selection: self.$viewModel.selection) {
-                            VStack(alignment: .leading) {
-                                Text(light.name)
-                                Text("IP: \(light.ipAddress)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                            }
+        VStack {
+            Form {
+                Section(header: Text("LIGHTS"), footer: AddButton{ self.viewModel.addLight() }) {
+                    List {
+                        ForEach(viewModel.lightDetails, id: \.id) { lightViewModel in
+                            self.lightDetailLink(lightViewModel)
                         }
+                        .onDelete { self.viewModel.deleteLights($0) }
                     }
-                    .onDelete { self.viewModel.deleteLights($0) }
                 }
-            }
-            Section(header: Text("Advanced")) {
-                NavigationLink(destination: ArtNetDiagnoseView()) {
-                    Text("Configure Node Address")
+                Section(header: Text("ADVANCED")) {
+                    NavigationLink(destination: ArtNetDiagnoseView()) {
+                        Text("Configure Node Address")
+                    }
+                    NavigationLink(destination: ArtNetNodeListView()) {
+                        Text("List Nodes")
+                    }
                 }
-                NavigationLink(destination: ArtNetNodeListView()) {
-                    Text("List Nodes")
+                Section(header: Text("ABOUT")) {
+                    Info("Version", value: viewModel.appVersion)
                 }
             }
         }

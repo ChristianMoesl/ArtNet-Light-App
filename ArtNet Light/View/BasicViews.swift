@@ -39,7 +39,8 @@ struct Info: View {
     var body: some View {
         HStack {
             Text(text)
-            Text(value).multilineTextAlignment(.trailing)
+            Spacer()
+            Text(value)
         }
     }
 }
@@ -59,6 +60,26 @@ struct StringField: View {
             TextField("", text: value)
                 .multilineTextAlignment(.trailing)
         }
+    }
+}
+
+struct AddButton: View {
+    var action: () -> Void
+    
+    init( _ action: @escaping () -> Void) {
+        self.action = action
+    }
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Button(action: action, label: {
+                Text("Add")
+                    .font(.callout)
+                    .frame(alignment: .center)
+            })
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+        .padding(6)
     }
 }
 

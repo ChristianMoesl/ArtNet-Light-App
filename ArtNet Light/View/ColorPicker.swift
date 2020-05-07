@@ -39,9 +39,6 @@ struct ColorPicker: UIViewRepresentable {
     @Binding var color: UIColor
 
     func makeUIView(context: Context) -> MyColorPicker {
-        print("\(frame)")
-        let f = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: frame.width + frame.width * 0.3333)
-        print("\(f)")
         let view = MyColorPicker(frame: frame)
         view.delegate = context.coordinator
         return view

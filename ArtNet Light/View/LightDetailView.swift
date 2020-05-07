@@ -142,20 +142,8 @@ struct LightDetailView: View {
 
     var body: some View {
         Form {
-            Section(header: Text(LocalizedStringKey("Name"))) {
+            Section(header: Text("LIGHT")) {
                 TextField(LocalizedStringKey("Name"), text: $viewModel.name)
-            }
-            Section(header: Text(LocalizedStringKey("Network"))) {
-                TextField("IP Address", text: $viewModel.ipAddressField)
-                    .keyboardType(.numbersAndPunctuation)
-                if !viewModel.ipAddressValid {
-                    Text("IP address has wrong format")
-                        .fontWeight(.light)
-                        .font(.footnote)
-                        .foregroundColor(Color.red)
-                }
-            }
-            Section(header: Text("Light")) {
                 Stepper(value: $viewModel.channelNumber, in: 3...4, label: {
                     Text("Number of Channels: \(viewModel.channelNumber)")
                 })
@@ -173,9 +161,17 @@ struct LightDetailView: View {
                     }
                 }
             }
-            Section(header: Text("Lightpoints"), footer: Button(action: {
-                self.viewModel.createUniverse()
-            }, label: { Text("Add").font(.callout) })) {
+            Section(header: Text(LocalizedStringKey("NETWORK"))) {
+                TextField("IP Address", text: $viewModel.ipAddressField)
+                    .keyboardType(.numbersAndPunctuation)
+                if !viewModel.ipAddressValid {
+                    Text("IP address has wrong format")
+                        .fontWeight(.light)
+                        .font(.footnote)
+                        .foregroundColor(Color.red)
+                }
+            }
+            Section(header: Text("UNIVERSES"), footer: AddButton{ self.viewModel.createUniverse() }) {
                 List {
                     ForEach(viewModel.universesViewModels, id: \.id) { universe in
                         NavigationLink(destination: UniverseDetailView(viewModel: universe), tag: universe.id, selection: self.$viewModel.selection) {
