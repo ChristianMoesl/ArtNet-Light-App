@@ -33,6 +33,7 @@ class DimmerViewModel: ObservableObject {
     }
     
     let settingsViewModel: SettingsViewModel
+    let effectsRunnerViewModel: EffectsRunnerViewModel
     
     private let artNet: ArtNetMaster
     private let lightStore: LightStore
@@ -48,6 +49,7 @@ class DimmerViewModel: ObservableObject {
         self.lightStore = lightStore
         self.color = UIColor.white
         self.settingsViewModel = .init(lightStore)
+        self.effectsRunnerViewModel = .init()
         
         updateColor()
 
@@ -96,7 +98,11 @@ struct DimmerView: View {
     @ObservedObject var viewModel: DimmerViewModel
     
     var effectsRunnerLink: some View {
-        Text("")
+        NavigationLink(destination: EffectsRunnerView(viewModel: viewModel.effectsRunnerViewModel)) {
+            Image(systemName: "play.circle")
+                .resizable()
+                .frame(width: 32, height: 32, alignment: .center)
+        }
     }
     
     var settingsLink: some View {
@@ -138,7 +144,7 @@ struct DimmerView: View {
                 }
             }
             .navigationBarTitle(Text("Dimmer"), displayMode: .inline)
-            .navigationBarItems(leading: effectsRunnerLink, trailing: settingsLink)
+            .navigationBarItems(/*leading: effectsRunnerLink, */trailing: settingsLink)
         }
     }
 }

@@ -68,3 +68,15 @@ extension Publisher where Self.Failure == Never {
         }
     }
 }
+
+extension View {
+    func maskContent<T: View>(using: T) -> some View {
+        using.mask(self)
+    }
+}
+
+extension CGPoint {
+    static func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+}

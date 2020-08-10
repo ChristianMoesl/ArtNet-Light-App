@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		48D14D9D7728280D69BA7B9B /* Pods_ArtNet_Light.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197174C75281B11992ED58D4 /* Pods_ArtNet_Light.framework */; };
 		54C69589DFE241FFADCE9877 /* Pods_ArtNet_Light_ArtNet_LightUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA67D7D74A81F8F94D294F3D /* Pods_ArtNet_Light_ArtNet_LightUITests.framework */; };
+		8305E18824640B2C00B096BF /* EffectsRunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305E18724640B2C00B096BF /* EffectsRunnerView.swift */; };
+		8305E18A2464610E00B096BF /* AudioMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305E1892464610E00B096BF /* AudioMeterView.swift */; };
+		8305E18C2464641F00B096BF /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8305E18B2464641F00B096BF /* MicrophoneMonitor.swift */; };
 		831A278F24438CB60063DA15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A278E24438CB60063DA15 /* AppDelegate.swift */; };
 		831A279124438CB60063DA15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A279024438CB60063DA15 /* SceneDelegate.swift */; };
 		831A279324438CB60063DA15 /* DimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A279224438CB60063DA15 /* DimmerView.swift */; };
@@ -61,6 +64,9 @@
 		197174C75281B11992ED58D4 /* Pods_ArtNet_Light.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtNet_Light.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1E663E2004C659D1CACB6B /* Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet Light-ArtNet LightUITests/Pods-ArtNet Light-ArtNet LightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		24CD2522759BC68D2D6AC14E /* Pods-ArtNet Light.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtNet Light.debug.xcconfig"; path = "Target Support Files/Pods-ArtNet Light/Pods-ArtNet Light.debug.xcconfig"; sourceTree = "<group>"; };
+		8305E18724640B2C00B096BF /* EffectsRunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsRunnerView.swift; sourceTree = "<group>"; };
+		8305E1892464610E00B096BF /* AudioMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMeterView.swift; sourceTree = "<group>"; };
+		8305E18B2464641F00B096BF /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
 		831A278B24438CB60063DA15 /* ArtNet Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ArtNet Remote.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		831A278E24438CB60063DA15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		831A279024438CB60063DA15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 			children = (
 				8324DD22244A2B6F00CA27EC /* ArtNetMaster.swift */,
 				83831480245DCEE90094AD95 /* LightStore.swift */,
+				8305E18B2464641F00B096BF /* MicrophoneMonitor.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -242,6 +249,8 @@
 				834AB2F72443BAC80032505B /* ColorPicker.swift */,
 				83F92CAB245A14FF006676CB /* ArtNetDiagnoseView.swift */,
 				838885A9245B38CE00F28268 /* ArtNetNodeListView.swift */,
+				8305E18724640B2C00B096BF /* EffectsRunnerView.swift */,
+				8305E1892464610E00B096BF /* AudioMeterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,11 +519,14 @@
 				83DA3CAA245CC0CE00CEA451 /* Universe.swift in Sources */,
 				838E5B5724549B3100BF9F66 /* Utils.swift in Sources */,
 				8383147C245DC74A0094AD95 /* NetworkUtils.swift in Sources */,
+				8305E18C2464641F00B096BF /* MicrophoneMonitor.swift in Sources */,
 				837C7832245B1D9000171D97 /* ArtNetProtocol.swift in Sources */,
 				831A279324438CB60063DA15 /* DimmerView.swift in Sources */,
 				83831481245DCEE90094AD95 /* LightStore.swift in Sources */,
 				8383147E245DCBD40094AD95 /* Combinatoric.swift in Sources */,
 				8324DD23244A2B7000CA27EC /* ArtNetMaster.swift in Sources */,
+				8305E18A2464610E00B096BF /* AudioMeterView.swift in Sources */,
+				8305E18824640B2C00B096BF /* EffectsRunnerView.swift in Sources */,
 				83DA3CA9245CC0CE00CEA451 /* Light.swift in Sources */,
 				834AB2F82443BAC80032505B /* ColorPicker.swift in Sources */,
 			);
@@ -686,7 +698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ArtNet Light/Preview Content\"";
 				DEVELOPMENT_TEAM = 64GBGY27R4;
 				ENABLE_PREVIEWS = YES;
@@ -695,7 +707,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christianmoesl.ArtNet-Remote";
 				PRODUCT_NAME = "ArtNet Remote";
 				SWIFT_VERSION = 5.0;
@@ -709,7 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ArtNet Light/Preview Content\"";
 				DEVELOPMENT_TEAM = 64GBGY27R4;
 				ENABLE_PREVIEWS = YES;
@@ -718,7 +730,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.christianmoesl.ArtNet-Remote";
 				PRODUCT_NAME = "ArtNet Remote";
 				SWIFT_VERSION = 5.0;
